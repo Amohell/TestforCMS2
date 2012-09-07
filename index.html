@@ -52,39 +52,34 @@
     	
     function showPage(IOE) 
     {
+    	alert("time to show " + localStorage['loadIntern']);
     	if(IOE == "intern")
     	{
     		url = localStorage['loadIntern'];
-    		window.plugins.childBrowser.onLocationChange = locationChanged;
-       		window.plugins.childBrowser.onClose = closed;
-        	window.plugins.childBrowser.showWebPage(url, {
-        	showAddress:true
-    	 });
+    		window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
         }
     	if(IOE == "extern")
         {
         	url = localStorage['loadextern'];
-        	window.plugins.childBrowser.onLocationChange = locationChanged;
-        	window.plugins.childBrowser.onClose = closed;
-        	window.plugins.childBrowser.showWebPage(url, {
-        	showAddress:false
-        });
+        	window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
         }
         if(IOE == "extern")
         {
         	url = localStorage['loadexternalbrowser'];
-        	showWebPage(url);
+        	window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
         }
         if(IOE == "internStart")
       	{
+      		alert("now is the time");
       		url = localStorage['startpage'];
-    		window.plugins.childBrowser.onLocationChange = locationChanged;
-       		window.plugins.childBrowser.onClose = closed;
-        	window.plugins.childBrowser.showWebPage(url, {
-        	showAddress:true
-        	});
+      		alert(url);
+    		 window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
+        	}
       	}
-     }
        // 
     
     function openExternal() {
