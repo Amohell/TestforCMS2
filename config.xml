@@ -4,7 +4,7 @@
         id = "com.phonegap.TestforCMS"
         version = "1.0.0">
 
-        <name>Testerm Application</name>
+        <name>TestforCMS</name>
 
         <description>
         A test application for PhoneGap
@@ -19,7 +19,7 @@
         <gap:splash src="splash.png"/>
 		<gap:plugin name="ChildBrowser" /> <!-- latest release -->
 
-
+z
         <feature name="http://api.phonegap.com/1.0/geolocation"/>
         <feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
