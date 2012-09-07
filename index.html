@@ -55,7 +55,7 @@
     	
     function showPage(IOE) 
     {
-    	alert("time to show " + localStorage['loadIntern']);
+    	alert("ioe..?" + IOE)
     	if(IOE == "intern")
     	{
     		alert((window.plugins.childBrowser != undefined) + " should be true")
@@ -85,9 +85,18 @@
       		alert(url);
     		 window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: true });
-        	}
-      	}
-       // 
+         }
+         else{
+         	alert("jumped to the else")
+            alert((window.plugins.childBrowser != undefined) + " should be true")
+      		alert("now is the time");
+      		url = localStorage['startpage'];
+      		alert(url);
+    		 window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
+            }
+        }
+       //
     
     function openExternal() {
         window.plugins.childBrowser.openExternal("ixpdev/");
