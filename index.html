@@ -1,8 +1,9 @@
 <html>
     <head>
     	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    	<script src="js/main.js"></script>
     </head>
-    <body>
+    <body onload="init()">
 		<div id="mainWebsite">
 			<div id="titlebar"><span id="title">Seneca CMS</span></div>
 				
@@ -13,6 +14,7 @@
 						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern()"><li id="button2">Load intern</li></a>
 						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
 						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
+						<a href="#" onmouseover="showlocation()"><input type="text" id="location" /></a>
 					</ul>  
 				</div> 
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
@@ -21,92 +23,5 @@
     </body>
     <script src="phonegap.js"></script>
     <script src="childbrowser.js"></script>
-    <script>
-    
-    function launchBrowser() {
-            alert((window.plugins.childBrowser != undefined) + " should be true")
-            window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
-            { showLocationBar: true });
-        }
-    	
-    function showPage(sort) 
-    {
-    	if(sort == "start")
-    	{
-      		url = localStorage['startpage'];
-
-    		 window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: true });
-        }
-        if(sort == "other")
-        {
-        	url = localStorage['urlother'];
-        	window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: true });
-        }
-	}
-       //
-    
-    
-	function loadIntern()
-	{
-		localStorage['startpage'] = "http://ixpdev/mgr/";
-		showPage("other");
-	}
-	function loadExtern()
-	{
-		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
-		showPage("other");
-	}
-	function loadExternalBrowser()
-	{
-		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
-		showPage("other");
-	}
-	function loadStartpage()
-	{
-		if(localStorage['startpage'] == null || localStorage['startpage'] == "")
-		{
-			saveURL()
-			loadStartpage()
-		}
-		else{
-			showPage("start");;
-		}
-	}
-	
-	function init()
-	{
-		alert(window.screen.height);
-		if (window.screen.height == 990) 
-		{
-    		document.getElementById('mainWebsite').style.height='870px';
-   	}
-   		if (window.screen.height == 1280) 
-		{
-    		document.getElementById('mainWebsite').style.height='600px';
-   		}
-   }
-   function saveURL()
-   {
-   	var url=prompt("Give url for the startpage","http://www.");
-   	var subsurl = url.substr(0,4)
-	if (url!=null && url!="")
-  	{
-  		alert(subsurl);
-  		if(subsurl != "http")
-  		{
-  			url = "http://" + url;
-  		}
-  		localStorage['startpage'] = url;
-  		alert(url);
-  	}
-  	else{
-  		alert("enter something");
-  	} 
-   }
-	
-	
-    </script>
   
 </html>
