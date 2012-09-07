@@ -3,10 +3,10 @@
             window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
             { showLocationBar: true });
         }
-    function showlocation()
+    function showlocation(cords)
     {
     	var locbox = document.getElementById('location');
-    	locbox = getLocation();
+    	locbox.value = cords;
     }
     function showPage(sort) 
     {
@@ -86,7 +86,7 @@ var getLocation = function() {
     var suc = function(p) {
         var cords = p.coords.latitude + " " + p.coords.longitude ;
         alert(cords);
-        return cords;
+        showlocation(cords);
     };
     var locFail = function() {
     };
