@@ -243,11 +243,12 @@ function capturePhoto(){
     navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 }
 function uploadPhoto(data){
-	alert("uploading");
+
 // this is where you would send the image file to server
  	
- 	alert("data:image/jpeg;base64," + data);
+     alert(data+".jpg")	;
     cameraPic.src = data+".jpg";
+
     // Successful upload to the server
     navigator.notification.alert(
         'Your Photo has been uploaded',  // message
