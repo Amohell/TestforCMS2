@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.cms.testforCMS2"
+        versionCode="10" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>TestforCMS2</name>
+
+	
+	<gap:plugin name="ChildBrowser" /> <!-- latest release -->
+	
+	<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
+
+	
+    <description>
+       A test for managing the CMS
+    </description>
+	
+
+
+    <author href="www.seneca.nl" email="svankonijnenburg@seneca.nl">
+        Sander van Konijnenburg
+    </author>
+
+</widget>
