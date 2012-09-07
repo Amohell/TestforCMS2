@@ -1,30 +1,40 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-  </head>  
-  
-  <body onload="init()">
-		 <div id="mainWebsite">
+    <head>
+    	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <h1>Child Browser Demo</h1>
+		<div id="mainWebsite">
 			<div id="titlebar"><span id="title">Seneca CMS</span></div>
 				
 				
 				<div id="menu">
 					<ul>
 						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="showPage()"><li id="button1">go to startpage</li></a>
-						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="showPage('http://ixpdev/Mgr/ManagerLogin')"><li id="button2">Load intern</li></a>
+						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="showPage()"><li id="button2">Load intern</li></a>
 						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="showPage()"><li id="button3">Load extern</li></a>
 						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
 					</ul>  
 				</div> 
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
 		</div>
-  </body>
-   <script src="phonegap.js"></script>
+		
+		
+        <a onClick="launchBrowser()" href="#">What does it do?</a>
+
+    </body>
+    <script src="phonegap.js"></script>
     <script src="childbrowser.js"></script>
     <script>
+     function launchBrowser() {
+            alert((window.plugins.childBrowser != undefined) + " should be true")
+            window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
+            { showLocationBar: true });
+        }
     	
     function showPage() 
     {
+    		alert(localStorage['startpage']);
       		alert((window.plugins.childBrowser != undefined) + " should be true");
       		alert("now is the time");
       		url = localStorage['startpage'];
