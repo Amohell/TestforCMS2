@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.alunny.TestforCMS"
+        id          = "com.amohell.TestforCMS"
         version     = "1.0.0">
 
 <name>TestforCMS</name>
 
-<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
-<feature name="http://api.phonegap.com/1.0/network" />
+<gap:plugin name="ChildBrowser" version="3.0.1" />
 
 <preference name="phonegap-version" value="2.0.0" />
 
