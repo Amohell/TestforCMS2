@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="refresh" content=0;url=javascript:loadStartpage();>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Child Browser Example</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+   
+
+    <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+    <script type="text/javascript" charset="utf-8">
+     var userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.match(/android/))
+     {
+   		 document.write("<script type='text/javascript' src='cordova-android.2.0.0.js'><\/script>");
+  	} 
+  	else 
+  	{
+   		 document.write("<script type='text/javascript' src='cordova-iphone.2.0.0.js'><\/script>");
+  	}
+
+    // Wait for PhoneGap to load
+    //
+    
+    function loadStartpageDelay(locbar, url)
+    {
+    	alert(url)
+    	setTimeout(showPage(locbar, url), 500);
+    }
+    
+    function init()
+    {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() 
+    {
+    	return true;
+    }
+    
+    function locationChanged(newurl) {
+
+        console.log("The JS got this url = " + newurl);
+    }
+    
+    function closed() {
+        console.log("The JS got a close event");
+    }
+    	
+    function showPage(IOE) 
+    {
+    	if(IOE == "intern")
+    	{
+    		url = localStorage['loadIntern'];
+    		window.plugins.childBrowser.onLocationChange = locationChanged;
+       		window.plugins.childBrowser.onClose = closed;
+        	window.plugins.childBrowser.showWebPage(url, {
+        	showAddress:true
+    	 });
+        }
+    	if(IOE == "extern")
+        {
+        	url = localStorage['loadextern'];
+        	window.plugins.childBrowser.onLocationChange = locationChanged;
+        	window.plugins.childBrowser.onClose = closed;
+        	window.plugins.childBrowser.showWebPage(url, {
+        	showAddress:false
+        });
+        }
+        if(IOE == "extern")
+        {
+        	url = localStorage['loadexternalbrowser'];
+        	showWebPage(url);
+        }
+        if(IOE == "internStart")
+      	{
+      		url = localStorage['startpage'];
+    		window.plugins.childBrowser.onLocationChange = locationChanged;
+       		window.plugins.childBrowser.onClose = closed;
+        	window.plugins.childBrowser.showWebPage(url, {
+        	showAddress:true
+        	});
+      	}
+     }
+       // 
+    
+    function openExternal() {
+        window.plugins.childBrowser.openExternal("ixpdev/");
+    } 
+    
+    function checkUrl()
+    {
+    	alert(localStorage['loadIntern']);
+    }
+	function loadIntern(url)
+	{
+		localStorage['loadIntern'] = url;
+		var IOE = "intern";
+		showPage(IOE);
+	}
+	function loadExtern()
+	{
+		localStorage['loadextern'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		var IOE = "extern";
+		showPage(IOE)
+	}
+	function loadExternalBrowser()
+	{
+		localStorage['loadexternalbrowser'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		var IOE = "externalBrowser";
+		showPage(IOE)
+	}
+	function loadStartpage()
+	{
+		if(localStorage['startpage'] == null || localStorage['startpage'] == "")
+		{
+			saveURL()
+			loadStartpage()
+		}
+		else{
+				var IOE = "internStart";
+				showPage(IOE);
+		}
+	}
+	
+	function init()
+	{
+		alert(window.screen.height);
+		if (window.screen.height == 990) 
+		{
+    		document.getElementById('mainWebsite').style.height='870px';
+   	}
+   		if (window.screen.height == 1280) 
+		{
+    		document.getElementById('mainWebsite').style.height='600px';
+   		}
+   }
+   function saveURL()
+   {
+   	var url=prompt("Give url for the startpage","http://www.");
+   	var subsurl = url.substr(0,4)
+	if (url!=null && url!="")
+  	{
+  		alert(subsurl);
+  		if(subsurl != "http")
+  		{
+  			url = "http://" + url;
+  		}
+  		localStorage['startpage'] = url;
+  		alert(url);
+  	}
+  	else{
+  		alert("enter something");
+  	} 
+   }
+	
+	
+    </script>
+  </head>
+  <body onload="init()">
+ 	 <div id="mainWebsite">
+	 	<div id="titlebar"><span id="title">Seneca CMS</span></div>
+	 		
+ 			
+	 		<div id="menu">
+			 	<ul>
+			 	 	<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
+			 		<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern('http://ixpdev/Mgr/ManagerLogin')"><li id="button2">Load intern</li></a>
+			 		<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
+			 		<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
+			 	</ul>  
+			</div> 
+		<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
+	</div>
+  </body>
+</html>
