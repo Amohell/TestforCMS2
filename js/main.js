@@ -247,7 +247,7 @@ function uploadPhoto(data){
 // this is where you would send the image file to server
  	
      alert(data+".jpg")	;
-    cameraPic.src = data+".jpg";
+    cameraPic.src = data;
 
     // Successful upload to the server
     navigator.notification.alert(
