@@ -3,7 +3,6 @@
     	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
     </head>
     <body>
-        <h1>Child Browser Demo</h1>
 		<div id="mainWebsite">
 			<div id="titlebar"><span id="title">Seneca CMS</span></div>
 				
@@ -19,46 +18,45 @@
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
 		</div>
 		
-		
-        <a onClick="launchBrowser()" href="#">What does it do?</a>
 
     </body>
     <script src="phonegap.js"></script>
     <script src="childbrowser.js"></script>
     <script>
-     function launchBrowser() {
-            alert((window.plugins.childBrowser != undefined) + " should be true")
-            window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
-            { showLocationBar: true });
-        }
     	
-    function showPage() 
+    function showPage(sort) 
     {
-    		alert(localStorage['startpage']);
-      		alert((window.plugins.childBrowser != undefined) + " should be true");
-      		alert("now is the time");
+    	if(sort == "start")
+    	{
       		url = localStorage['startpage'];
-      		alert(url);
+
     		 window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: true });
+        }
+        if(sort == "other")
+        {
+        	url = localStorage['urlother'];
+        	window.plugins.childBrowser.showWebPage(url,
+            { showLocationBar: true });
+        }
 	}
        //
     
     
-	function loadIntern(url)
+	function loadIntern()
 	{
-		localStorage['startpage'] = url;
-		showPage();
+		localStorage['startpage'] = "http://ixpdev/mgr/";
+		showPage("other");
 	}
 	function loadExtern()
 	{
-		localStorage['startpage'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
-		showPage()
+		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		showPage("other");
 	}
 	function loadExternalBrowser()
 	{
-		localStorage['startpage'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
-		showPage()
+		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		showPage("other");
 	}
 	function loadStartpage()
 	{
@@ -68,7 +66,7 @@
 			loadStartpage()
 		}
 		else{
-			showPage();
+			showPage("start");;
 		}
 	}
 	
