@@ -6,7 +6,6 @@
     function showlocation()
     {
     	var locbox = document.getElementById('location');
-    	
     	locbox = getLocation();
     }
     function showPage(sort) 
@@ -85,7 +84,9 @@
 
 var getLocation = function() {
     var suc = function(p) {
-        return p.coords.latitude + " " + p.coords.longitude ;
+        var cords = p.coords.latitude + " " + p.coords.longitude ;
+        alert(cords);
+        return cords;
     };
     var locFail = function() {
     };
@@ -217,7 +218,7 @@ function init() {
     // the next line makes it impossible to see Contacts on the HTC Evo since it
     // doesn't have a scroll button
     // document.addEventListener("touchmove", preventBehavior, false);
-    document.addEventListener("deviceready", deviceInfo, true);
+ //   document.addEventListener("deviceready", deviceInfo, true);
 		alert(window.screen.height);
 		if (window.screen.height == 990) 
 		{
