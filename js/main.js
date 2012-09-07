@@ -241,7 +241,7 @@ function uploadPhoto(data){
 // this is where you would send the image file to server
  
 //output image to screen
-    cameraPic.src = "data:image/jpeg;base64," + data;
+   document["cameraPic"].src = "data:image/jpeg;base64," + data;
 }
 function uploadPhoto(data){
 // this is where you would send the image file to server
@@ -257,7 +257,7 @@ function uploadPhoto(data){
  
     // upload has failed Fail
  
-    
+    /* 
  
     if (failedToUpload){
  
@@ -269,8 +269,8 @@ function uploadPhoto(data){
         );
  
     } 
-
-
+    */
+ 
  
 }
  
