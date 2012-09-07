@@ -21,108 +21,36 @@
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
 		</div>
   </body>
+   <script src="phonegap.js"></script>
+    <script src="childbrowser.js"></script>
     <script>
-
-    // Wait for PhoneGap to load
-    //
-    
-    function loadStartpageDelay(locbar, url)
-    {
-    	alert(url)
-    	setTimeout(showPage(locbar, url), 500);
-    }
-    
-    function init()
-    {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() 
-    {
-    	return true;
-    }
-    
-    function locationChanged(newurl) {
-
-        console.log("The JS got this url = " + newurl);
-    }
-    
-    function closed() {
-        console.log("The JS got a close event");
-    }
     	
-    function showPage(IOE) 
+    function showPage() 
     {
-    	alert("ioe..?" + IOE)
-    	if(IOE == "intern")
-    	{
-    		alert((window.plugins.childBrowser != undefined) + " should be true")
-    		url = localStorage['loadIntern'];
-    		window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: true });
-        }
-    	if(IOE == "extern")
-        {
-        	alert((window.plugins.childBrowser != undefined) + " should be true")
-        	url = localStorage['loadextern'];
-        	window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: true });
-        }
-        if(IOE == "extern")
-        {
-        	alert((window.plugins.childBrowser != undefined) + " should be true")
-        	url = localStorage['loadexternalbrowser'];
-        	window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: true });
-        }
-        if(IOE == "internStart")
-      	{
-      		alert((window.plugins.childBrowser != undefined) + " should be true")
+      		alert((window.plugins.childBrowser != undefined) + " should be true");
       		alert("now is the time");
       		url = localStorage['startpage'];
       		alert(url);
     		 window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: true });
-         }
-         else{
-         	alert("jumped to the else")
-            alert((window.plugins.childBrowser != undefined) + " should be true")
-      		alert("now is the time");
-      		url = localStorage['startpage'];
-      		alert(url);
-    		 window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: true });
-            }
-        }
+	}
        //
     
-    function openExternal() {
-        window.plugins.childBrowser.openExternal("ixpdev/");
-    } 
     
-    function checkUrl()
-    {
-    	alert(localStorage['loadIntern']);
-    }
 	function loadIntern(url)
 	{
-		localStorage['loadIntern'] = url;
-		var IOE = "intern";
-		showPage(IOE);
+		localStorage['startpage'] = url;
+		showPage();
 	}
 	function loadExtern()
 	{
-		localStorage['loadextern'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
-		var IOE = "extern";
-		showPage(IOE)
+		localStorage['startpage'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		showPage()
 	}
 	function loadExternalBrowser()
 	{
-		localStorage['loadexternalbrowser'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
-		var IOE = "externalBrowser";
-		showPage(IOE)
+		localStorage['startpage'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		showPage()
 	}
 	function loadStartpage()
 	{
@@ -132,8 +60,7 @@
 			loadStartpage()
 		}
 		else{
-				var IOE = "internStart";
-				showPage(IOE);
+			showPage();
 		}
 	}
 	
