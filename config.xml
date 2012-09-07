@@ -13,13 +13,11 @@
         <author href="seneca.nl" email="svankonijnenburg@seneca.nl">
         S vk
         </author>
-
-        <icon src="img/icon.png" width="72" height="72" ></icon>
-
-        <gap:splash src="splash.png"/>
-		<gap:plugin name="ChildBrowser" /> <!-- latest release -->
-		
-		<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
+	
+		<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1"/>
         <feature name="http://api.phonegap.com/1.0/geolocation"/>
         <feature name="http://api.phonegap.com/1.0/network"/>
+		
+		<preference name="phonegap-version" value="2.0.0" />
+
 </widget>
