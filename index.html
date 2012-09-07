@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=320; user-scalable=no" />
-    <meta http-equiv="refresh" content=0;url=javascript:loadStartpage();>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Child Browser Example</title>
     <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<script src="childbrowser.js"></script>
-
-    
-    <script type="text/javascript" charset="utf-8">
-     var userAgent = navigator.userAgent.toLowerCase();
-    if (userAgent.match(/android/))
-     {
-   		 document.write("<script type='text/javascript' src='cordova-android.2.0.0.js'><\/script>");
-  	} 
-  	else 
-  	{
-   		 document.write("<script type='text/javascript' src='cordova-iphone.2.0.0.js'><\/script>");
-  	}
+  </head>  
+  
+  <body onload="init()">
+		 <div id="mainWebsite">
+			<div id="titlebar"><span id="title">Seneca CMS</span></div>
+				
+				
+				<div id="menu">
+					<ul>
+						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
+						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern('http://ixpdev/Mgr/ManagerLogin')"><li id="button2">Load intern</li></a>
+						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
+						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
+					</ul>  
+				</div> 
+			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
+		</div>
+  </body>
+    <script>
 
     // Wait for PhoneGap to load
     //
@@ -55,24 +58,28 @@
     	alert("time to show " + localStorage['loadIntern']);
     	if(IOE == "intern")
     	{
+    		alert((window.plugins.childBrowser != undefined) + " should be true")
     		url = localStorage['loadIntern'];
     		window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: true });
         }
     	if(IOE == "extern")
         {
+        	alert((window.plugins.childBrowser != undefined) + " should be true")
         	url = localStorage['loadextern'];
         	window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: true });
         }
         if(IOE == "extern")
         {
+        	alert((window.plugins.childBrowser != undefined) + " should be true")
         	url = localStorage['loadexternalbrowser'];
         	window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: true });
         }
         if(IOE == "internStart")
       	{
+      		alert((window.plugins.childBrowser != undefined) + " should be true")
       		alert("now is the time");
       		url = localStorage['startpage'];
       		alert(url);
@@ -154,22 +161,5 @@
 	
 	
     </script>
-  </head>
-  <body onload="init()">
-		 <div id="mainWebsite">
-			<div id="titlebar"><span id="title">Seneca CMS</span></div>
-				
-				
-				<div id="menu">
-					<ul>
-						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
-						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern('http://ixpdev/Mgr/ManagerLogin')"><li id="button2">Load intern</li></a>
-						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
-						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
-					</ul>  
-				</div> 
-			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
-		</div>
-  </body>
   
 </html>
