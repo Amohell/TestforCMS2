@@ -1,29 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns = "http://www.w3.org/ns/widgets"
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.cms.testforCMS2"
-        versionCode="10" 
-        version   = "2.0.0"
-		phonegap-version = "2.0.0">
+        id = "com.phonegap.TestforCMS"
+        version = "1.0.0">
 
-    <!-- versionCode is optional and Android only -->
+        <name>Testerm Application</name>
 
-    <name>TestforCMS2</name>
+        <description>
+        A test application for PhoneGap
+        </description>
 
-	
-	<gap:plugin name="ChildBrowser" /> <!-- latest release -->
-	
-	<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
+        <author href="seneca.nl" email="svankonijnenburg@seneca.nl">
+        S vk
+        </author>
 
-	
-    <description>
-       A test for managing the CMS
-    </description>
-	
+        <icon src="img/icon.png" width="72" height="72" ></icon>
+
+        <gap:splash src="splash.png"/>
+		<gap:plugin name="ChildBrowser" /> <!-- latest release -->
 
 
-    <author href="www.seneca.nl" email="svankonijnenburg@seneca.nl">
-        Sander van Konijnenburg
-    </author>
-
+        <feature name="http://api.phonegap.com/1.0/geolocation"/>
+        <feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
