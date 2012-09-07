@@ -243,8 +243,10 @@ function capturePhoto(){
     navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 }
 function uploadPhoto(data){
+	alert("uploading");
 // this is where you would send the image file to server
- 
+ 	
+ 	alert("data:image/jpeg;base64," + data);
     cameraPic.src = "data:image/jpeg;base64," + data;
     // Successful upload to the server
     navigator.notification.alert(
@@ -256,7 +258,7 @@ function uploadPhoto(data){
  
     // upload has failed Fail
  
-    /* 
+    
  
     if (failedToUpload){
  
@@ -268,7 +270,6 @@ function uploadPhoto(data){
         );
  
     } 
-    */
  
  
 }
