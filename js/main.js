@@ -246,7 +246,7 @@ function uploadPhoto(data){
 // this is where you would send the image file to server
  
 //output image to screen
-	$(“#cameraPic”).attr( “src”, data );
+	$("#cameraPic").attr( "src", data );
 }
 function uploadPhoto(data){
 // this is where you would send the image file to server
