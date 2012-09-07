@@ -17,7 +17,4 @@
 
 <preference name="phonegap-version" value="1.7.0" />
 
-<rim:permissions>
-    <rim:permit>read_geolocation</rim:permit>
-</rim:permissions>
 </widget>
