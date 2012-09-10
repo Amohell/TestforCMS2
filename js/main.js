@@ -251,7 +251,7 @@ navigator.camera.PictureSourceType.PHOTOLIBRARY }
 function uploadPhoto(imageURI) { 
 			cameraPic.src= imageURI;
             var options = new FileUploadOptions(); 
-            options.fileKey="recFile"; 
+            options.fileKey="files"; 
             var imagefilename = Number(new Date())+".jpg"; 
             options.fileName=imagefilename; 
             options.mimeType="image/jpeg"; 
