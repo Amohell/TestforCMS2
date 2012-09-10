@@ -227,18 +227,17 @@ function backCamera()
 }
 function openOptions()
 {
-//	alert(document.getElementById('options').style.display);
-//	if(document.getElementById('options').style.display == "block");
-//	{
-//		document.getElementById('menu').style.display='block';
-	//	document.getElementById('photoview').style.display='none';
-	//	document.getElementById('options').style.display='none';
-	//}
-	//else{
-	//document.getElementById('menu').style.display='none';
-	//document.getElementById('photoview').style.display='none';
-	//document.getElementById('options').style.display='block';
-	
+	if(document.getElementById('options').style.display == 'block')
+	{
+		document.getElementById('menu').style.display='block';
+		document.getElementById('photoview').style.display='none';
+		document.getElementById('options').style.display='none';
+	}
+	else{
+	document.getElementById('menu').style.display='none';
+	document.getElementById('photoview').style.display='none';
+	document.getElementById('options').style.display='block';
+	}
 }
 function capturePhoto(){
     navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
@@ -270,7 +269,7 @@ function win(r)
  
 function fail(error) 
 {
-       alert("An error has occurred: Code = " = error.code);
+       alert("An error has occurred: Code = " + error.code);
 }
  
  
