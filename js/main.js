@@ -254,7 +254,7 @@ function uploadPhoto(imageURI)
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             
-            alert(imageURI);
+            alert(imageURI.substr(imageURI.lastIndexOf('/')+1));
  
             var params = new Object();
             params.value1 = "test";
@@ -276,8 +276,8 @@ function win(r)
 
 
 function win(r) { 
-	alert("success");
-            //console.log("Code = " + r.responseCode); 
+			alert("success");
+     	     //console.log("Code = " + r.responseCode); 
             //console.log("Response = " + r.response); 
             alert("Sent = " + r.bytesSent); 
         } 
