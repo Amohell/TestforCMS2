@@ -214,25 +214,7 @@ function toggleCompass() {
     }
 }
 
-function init() {
-    // the next line makes it impossible to see Contacts on the HTC Evo since it
-    // doesn't have a scroll button
-    // document.addEventListener("touchmove", preventBehavior, false);
- //   document.addEventListener("deviceready", deviceInfo, true);
-		alert(window.screen.height);
-		document.ontouchmove = function(e) 
-		{
-			e.preventDefault(); 
-		}
-		if (window.screen.height == 1080) 
-		{
-    		document.getElementById('mainWebsite').style.height='977px';
-   	}
-   		if (window.screen.height == 1280) 
-		{
-    		document.getElementById('mainWebsite').style.height='600px';
-   		}
-   }
+
 function showPhotoView()
 {
 	document.getElementById('menu').style.display='none';
@@ -243,42 +225,54 @@ function backCamera()
 	document.getElementById('menu').style.display='block';
 	document.getElementById('photoview').style.display='none';
 }
+function openOptions()
+{
+//	alert(document.getElementById('options').style.display);
+//	if(document.getElementById('options').style.display == "block");
+//	{
+//		document.getElementById('menu').style.display='block';
+	//	document.getElementById('photoview').style.display='none';
+	//	document.getElementById('options').style.display='none';
+	//}
+	//else{
+	//document.getElementById('menu').style.display='none';
+	//document.getElementById('photoview').style.display='none';
+	//document.getElementById('options').style.display='block';
+	
+}
 function capturePhoto(){
     navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 }
-function uploadPhoto(data){
-
-// this is where you would send the image file to server
- 	
-     alert(data+".jpg")	;
-    cameraPic.src = data;
-
-    // Successful upload to the server
-    navigator.notification.alert(
-        'Your Photo has been uploaded',  // message
-        okay,                           // callback
-        'Photo Uploaded',              // title
-        'OK'                          // buttonName
-    );
+function uploadPhoto(imageURI) 
+	{
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
  
-    // upload has failed Fail
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
  
-    
+            options.params = params;
+            options.chunkedMode = false;
  
-    if (failedToUpload){
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options);
+	}
+function win(r) 
+		{
+        	console.log("Code = " + r.responseCode);
+			console.log("Response = " + r.response);
+			console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        }
  
-    navigator.notification.alert(
-        'Your Photo has failed to upload',
-        failedDismissed,
-        'Photo Not Uploaded',
-        'OK'
-        );
- 
-    } 
- 
- 
+function fail(error) 
+{
+       alert("An error has occurred: Code = " = error.code);
 }
  
-function okay(){
-   alert("done uploading");
-}
+ 
+
+  

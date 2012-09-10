@@ -2,11 +2,32 @@
     <head>
     	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
     	<script src="js/main.js"></script>
+    	<script type="text/javascript">
+    		function setPageSize() {
+		    // the next line makes it impossible to see Contacts on the HTC Evo since it
+		    // doesn't have a scroll button
+		    //document.addEventListener("touchmove", preventBehavior, false);
+		   // document.addEventListener("deviceready", deviceInfo, true);
+			alert(window.screen.height);
+			document.ontouchmove = function(e) 
+			{
+			}
+				if (window.screen.height == 1080) 
+				{
+		    		document.getElementById('mainWebsite').style.height='977px';
+		   	}
+		   		if (window.screen.height == 1280) 
+				{
+		    		document.getElementById('mainWebsite').style.height='600px';
+		   		}
+		   }
+    	</script>
     </head>
-    <body onload="init()">
+    <body onload="setPageSize()">
     	
 		<div id="mainWebsite">
-			<div id="titlebar"><span id="title">Seneca CMS</span></div>
+			<div id="titlebar"><span id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seneca CMS</span><span id="optionsbutton"><a href="#" onmouseover="document.getElementById('button5').style.backgroundColor='red'" onmouseout="document.getElementById('button5').style.backgroundColor='#68a0ec'" onclick="openOptions()"><img src="images/options.png" height="100%" width="50px"></a></span>
+		</div>
 				
 				
 				<div id="photoview">
@@ -14,19 +35,23 @@
     					<button class="camera-control" onclick="capturePhoto();">Capture Photo</button>
      					<button class="camera-control" onclick="backCamera();">Back</button>
     					<div style="text-align:center;margin:20px;">
-        					<img id="cameraPic" src="" style="width:400;height:400px;">
+        					<img id="cameraPic" src="" style="width:500px;height:400px;">
     					</div>
 
 					</div>
+					
+				<div id="options">
+					<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
+					
+				</div>
     			</div>
 				<div id="menu">
 					<ul>
 						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
-						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern()"><li id="button2">Load intern</li></a>
+						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern()"><li id="button2">Add item</li></a>
 						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
-						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button4">Set startpage</li></a>
 						<li><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></li>
-						<a href="#" onmouseover="document.getElementById('button5').style.backgroundColor='red'" onmouseout="document.getElementById('button5').style.backgroundColor='#68a0ec'" onclick="showPhotoView()"> <li id="button5">Getphoto</li></a>
+						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="showPhotoView()"> <li id="button5">Getphoto</li></a>
 					</ul>  
 				</div> 
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
