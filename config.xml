@@ -6,6 +6,8 @@
 
 <name>TestforCMS</name>
 
+
+
 <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
 <access origin="http://ixpdev.smartsite.seneca.intern/mgr/manager" ></access>
 <access origin="http://ixpdev.smartsite.seneca.intern" ></access>
@@ -19,7 +21,7 @@
 <access origin="http://ixpdev" ></access>
 <access origin="http://www.twitter.com" ></access>
 
-<gap:plugin name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
+<gap:plugin name="ChildBrowser" version="~3" /> <!-- for Cordova (1.9.0+) -->
 
 <feature name="http://api.phonegap.com/1.0/network" />
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
@@ -27,5 +29,5 @@
 <feature name="http://api.phonegap.com/1.0/camera"/>
 <feature name="http://api.phonegap.com/1.0/media"/>
 
-
+<preference name="phonegap-version" value="2.0.0" />
 </widget>
