@@ -19,8 +19,7 @@
 <access origin="http://ixpdev" ></access>
 <access origin="http://www.twitter.com" ></access>
 
-
-<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
+<gap:plugin name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
 
 <feature name="http://api.phonegap.com/1.0/network" />
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
@@ -28,6 +27,5 @@
 <feature name="http://api.phonegap.com/1.0/camera"/>
 <feature name="http://api.phonegap.com/1.0/media"/>
 
-<preference name="phonegap-version" value="1.7.0" />
 
 </widget>
