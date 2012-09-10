@@ -250,6 +250,8 @@ function uploadPhoto(imageURI)
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
+            
+            alert(imageURI.substr(imageURI.lastIndexOf('/')+1));
  
             var params = new Object();
             params.value1 = "test";
