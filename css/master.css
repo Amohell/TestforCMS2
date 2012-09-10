@@ -10,6 +10,7 @@ body{
 	overflow-y: scroll;
    position:relative;
 	background-color:#244377;
+	overflow: hidden;
 }
 
 

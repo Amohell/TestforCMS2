@@ -220,6 +220,10 @@ function init() {
     // document.addEventListener("touchmove", preventBehavior, false);
  //   document.addEventListener("deviceready", deviceInfo, true);
 		alert(window.screen.height);
+		document.ontouchmove = function(e) 
+		{
+			e.preventDefault(); 
+		}
 		if (window.screen.height == 1080) 
 		{
     		document.getElementById('mainWebsite').style.height='977px';
