@@ -11,7 +11,7 @@
 <access origin="http://ixpdev.smartsite.seneca.intern" ></access>
 <access origin="http://ixpdev.smartsite.seneca.intern/mgr/manager*" ></access>
 <access origin="http://ixpdev.smartsite.seneca.intern*" ></access>
-<access origin="*.com" ></access>
+<access origin="*.com" ></access>	
 <access origin="*.nl" ></access>
 <access origin="*" ></access>
 <access origin="http://ixpdev*" ></access>
