@@ -247,7 +247,7 @@ function uploadPhoto(imageURI)
 	{
 			cameraPic.src = imageURI;
             var options = new FileUploadOptions();
-            options.chunkedMode = false;
+            options.chunkedMode = true;
             options.fileKey="files";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
@@ -274,6 +274,7 @@ function win(r)
 
 
 function win(r) { 
+	alert("success");
             //console.log("Code = " + r.responseCode); 
             //console.log("Response = " + r.response); 
             alert("Sent = " + r.bytesSent); 
