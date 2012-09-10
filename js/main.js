@@ -249,12 +249,11 @@ function uploadPhoto(imageURI)
 	{
 			cameraPic.src = imageURI;
             var options = new FileUploadOptions();
-            options.chunkedMode = false;
             options.fileKey="files";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.chunkedMode = false;
             options.mimeType="image/jpeg";
             
-            alert(imageURI.substr(imageURI.lastIndexOf('/')+1));
  
             var params = new Object();
             params.value1 = "test";
@@ -264,7 +263,7 @@ function uploadPhoto(imageURI)
             options.chunkedMode = false;
  
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options, true);
+            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options);
 	}
 function win(r) 
 		{
