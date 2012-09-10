@@ -279,13 +279,14 @@ function fail(error) {
   options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
   // mime type:
   options.mimeType = "text/plain";
+  options.chunkedMode = false;
   params = {
     val1: "some value",
     val2: "some other value"
   };
   options.params = params;
   ft = new FileTransfer();
-  ft.upload(imageURI, 'http://ixpdev/Pub/TestUpload', success, fail, options);
+  ft.upload(imageURI, 'http://ixpdev/Pub/TestUpload', success, fail, options, true);
 };
 
 // there was an error capturing the photo:
