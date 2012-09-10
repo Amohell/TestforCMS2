@@ -219,11 +219,13 @@ function showPhotoView()
 {
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='block';
+	document.getElementById('options').style.display='none';
 }
 function backCamera()
 {
 	document.getElementById('menu').style.display='block';
 	document.getElementById('photoview').style.display='none';
+	document.getElementById('options').style.display='none';
 }
 function openOptions()
 {
@@ -247,12 +249,12 @@ function uploadPhoto(imageURI)
 	{
 			cameraPic.src = imageURI;
             var options = new FileUploadOptions();
-            options.chunkedMode = true;
+            options.chunkedMode = false;
             options.fileKey="files";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             
-            alert("still there?");
+            alert(imageURI);
  
             var params = new Object();
             params.value1 = "test";
