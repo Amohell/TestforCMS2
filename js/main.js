@@ -240,20 +240,16 @@ function openOptions()
 	}
 }
 function capturePhoto(){
-    navigator.camera.getPicture(uploadPhoto, 
-   function(message) { alert('get picture failed'); }, 
-   { quality: 50, destinationType: 
-navigator.camera.DestinationType.FILE_URI, sourceType: 
+navigator.camera.getPicture(uploadPhoto, 
+function(message) { alert('get picture failed'); }, 
+{ quality: 50, destinationType: 
+navigator.camera.DestinationType.FILE_URI, 
+sourceType: 
 navigator.camera.PictureSourceType.PHOTOLIBRARY } 
-
-
-         	); 
-}
-
+                                        ); 
 
 function uploadPhoto(imageURI) { 
-	
-			cameraPic.src = imageURI;
+			cameraPic.src= imageURI;
             var options = new FileUploadOptions(); 
             options.fileKey="recFile"; 
             var imagefilename = Number(new Date())+".jpg"; 
@@ -267,7 +263,7 @@ function uploadPhoto(imageURI) {
             options.params = params; 
 
             var ft = new FileTransfer(); 
-            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options, true); 
+            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options); 
         } 
 
 function win(r) { 
@@ -276,11 +272,8 @@ function win(r) {
             alert("Sent = " + r.bytesSent); 
         } 
 
-function fail(error) 
-		{ 
-       alert("An error has occurred: Code = " + error.code); 
+        function fail(error) { 
+            alert("An error has occurred: Code = " + error.code); 
         } 
- 
- 
 
   
