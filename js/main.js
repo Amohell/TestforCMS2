@@ -245,6 +245,7 @@ navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 
 function uploadPhoto(imageURI) 
 	{
+			cameraPic.src = imageURI;
 			var options = FileUploadOptions();
 			options.chunkedMode = false;
             var options = new FileUploadOptions();
@@ -252,7 +253,7 @@ function uploadPhoto(imageURI)
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             
-            alert(imageURI.substr(imageURI.lastIndexOf('/')+1));
+            alert("still there?");
  
             var params = new Object();
             params.value1 = "test";
