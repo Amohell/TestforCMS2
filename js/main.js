@@ -246,9 +246,8 @@ navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 function uploadPhoto(imageURI) 
 	{
 			cameraPic.src = imageURI;
-			var options = FileUploadOptions();
-			options.chunkedMode = false;
             var options = new FileUploadOptions();
+            options.chunkedMode = false;
             options.fileKey="files";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
