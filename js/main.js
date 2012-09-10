@@ -263,6 +263,7 @@ function uploadPhoto(imageURI)
 	}
 function win(r) 
 		{
+			alert("win?");
         	console.log("Code = " + r.responseCode);
 			console.log("Response = " + r.response);
 			console.log("Sent = " + r.bytesSent);
