@@ -240,31 +240,38 @@ function openOptions()
 	}
 }
 function capturePhoto(){
-navigator.camera.getPicture(uploadPhoto, 
-function(message) { alert('get picture failed'); }, 
-{ quality: 50, destinationType: 
-navigator.camera.DestinationType.FILE_URI, 
-sourceType: 
-navigator.camera.PictureSourceType.PHOTOLIBRARY } 
-                                        ); 
+navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
+}
 
-function uploadPhoto(imageURI) { 
-			cameraPic.src= imageURI;
-            var options = new FileUploadOptions(); 
-            options.fileKey="files"; 
-            var imagefilename = Number(new Date())+".jpg"; 
-            options.fileName=imagefilename; 
-            options.mimeType="image/jpeg"; 
+function uploadPhoto(imageURI) 
+	{
+			var options = FileUploadOptions();
+			options.chunkedMode = false;
+            var options = new FileUploadOptions();
+            options.fileKey="files";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+            
+            alert(imageURI.substr(imageURI.lastIndexOf('/')+1));
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options, true);
+	}
+function win(r) 
+		{
+        	console.log("Code = " + r.responseCode);
+			console.log("Response = " + r.response);
+			console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        }
 
-            var params = new Object(); 
-            params.value1 = "test"; 
-            params.value2 = "param"; 
-
-            options.params = params; 
-
-            var ft = new FileTransfer(); 
-            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options); 
-        } 
 
 function win(r) { 
             //console.log("Code = " + r.responseCode); 
