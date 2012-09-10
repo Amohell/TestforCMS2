@@ -244,6 +244,8 @@ function capturePhoto(){
 }
 function uploadPhoto(imageURI) 
 	{
+			var options = FileUploadOptions();
+			options.chunkedMode = false;
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -257,7 +259,7 @@ function uploadPhoto(imageURI)
             options.chunkedMode = false;
  
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options);
+            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options, true);
 	}
 function win(r) 
 		{
