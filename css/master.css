@@ -79,6 +79,7 @@ a, a:hover, a:active, a:visited { color: white; text-decoration:none;}
 #mainWebsite
 {
     display:block;
+    position:relative;
 }
 #photoview{
     height:90.1%;
@@ -138,7 +139,8 @@ button.camera-control:hover {
     width:160px;
 }
 #cameraimage{
-    float:left;
+    position:absolute;
+    left:18%;
     height:80%;
     width:80%;
 }
