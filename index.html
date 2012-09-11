@@ -3,39 +3,67 @@
     	<title>TestforCMS</title>
     	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
     	<script src="js/main.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			function setPageSize() {
+				// the next line makes it impossible to see Contacts on the HTC Evo since it
+				// doesn't have a scroll button
+				//document.addEventListener("touchmove", preventBehavior, false);
+			   // document.addEventListener("deviceready", deviceInfo, true);
+				alert(window.screen.height);
+				document.ontouchmove = function(e) 
+				{
+				}
+					if (window.screen.height == 1080) 
+					{
+						document.getElementById('mainWebsite').style.height='977px';
+				}
+					if (window.screen.height == 1280) 
+					{
+						document.getElementById('mainWebsite').style.height='600px';
+					}
+					if (window.screen.height == 800) 
+					{
+						document.getElementById('mainWebsite').style.height='697px';
+					}
+					document.getElementById('menu').style.display='block';
+					document.getElementById('photoview').style.display='none';
+					document.getElementById('options').style.display='none';
+			   }
+	</script>
     </head>
-    
-    <body>	
+		
+    <body onload="setPageSize()">
+    	
 		<div id="mainWebsite">
 			<div id="titlebar"><span id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seneca CMS</span><span id="optionsbutton"><a href="#"  onclick="openOptions()"><img src="images/options.png" height="100%" width="50px"></a></span></div>
-				<div id="menu">
-					<ul>
-						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
-						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadInternAdd()"><li id="button2">Add item</li></a>
-						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern CMS</li></a>
-						<li><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></li>
-						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="showPhotoView()"> <li id="button4">Getphoto</li></a>
-					</ul>  
-				</div> 
-				
 				<div id="photoview">
     				<div id="camera">
-    					<div style="float:left;"><button class="camera-control" onclick="capturePhoto();">Capture Photo</button></div>
-     					<div style="float:left;"><button class="camera-control" onclick="backCamera();">Back</button></div>     				
+
+    					<button class="camera-control" onclick="uploadPhoto();">Capture Photo</button>
+     					<button class="camera-control" onclick="backCamera();">Back</button>
+    					<div style="text-align:center;">
+        					<img id="cameraPic" src="" style="width:100%;height:100%;">
+    					</div>
+
 					</div>
-					<div id="cameraimage">
-						<img id="cameraPic" src="" style="width:100%;height:100%" />
-					</div>
-    			</div>
+				</div>
 					
 				<div id="options">
 					<ul>
 					<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL()"><li id="button6">Set startpage</li></a>
 					</ul>
 				</div>
-			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
+    			
+				<div id="menu">
+					<ul>
+						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
+						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern()"><li id="button2">Add item</li></a>
+						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
+						<li><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></li>
+						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="showPhotoView()"> <li id="button4">Getphoto</li></a>
+					</ul>  
+				</div> 
 		</div>
-		
     </body>
     <script src="phonegap.js"></script>
     <script src="childbrowser.js"></script>

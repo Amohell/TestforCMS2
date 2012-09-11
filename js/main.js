@@ -204,8 +204,10 @@ function toggleCompass() {
         navigator.compass.clearWatch(watchID);
         watchID = null;
         updateHeading({ magneticHeading : "Off"});
-    } else {        
-        var options = { frequency: 1000 };
+    } else 
+    {        
+        var options = { frequency: 1000 
+        	};
         watchID = navigator.compass.watchHeading(updateHeading, function(e) {
             alert('Compass Error: ' + e.code);
         }, options);
@@ -217,7 +219,6 @@ function showPhotoView()
 {
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='block';
-	document.getElementById('options').style.display='none';
 	document.getElementById('options').style.display='none';
 }
 function backCamera()
@@ -234,13 +235,15 @@ function openOptions()
 		document.getElementById('menu').style.display='block';
 		document.getElementById('photoview').style.display='none';	
 	}
-	else{
+	else
+	{
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='none';
 	document.getElementById('options').style.display='block';
 	}
 }
-function capturePhoto(){
+function capturePhoto()
+{
 navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 }
 
