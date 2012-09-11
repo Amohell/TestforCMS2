@@ -8,7 +8,7 @@
     	function setPageSize() {
 		    // the next line makes it impossible to see Contacts on the HTC Evo since it
 		    // doesn't have a scroll button
-		    //document.addEventListener("touchmove", preventBehavior, false);
+		    document.addEventListener("touchmove", preventBehavior, false);
 		   // document.addEventListener("deviceready", deviceInfo, true);
 			alert(window.screen.height);
 			document.ontouchmove = function(e) 
@@ -16,15 +16,15 @@
 			}
 				if (window.screen.height == 1080) 
 				{
-		    		document.getElementById('mainWebsite').style.height='977px';
+		    		document.getElementById('mainWebsite').style.height='972px';
 		   	}
 		   		if (window.screen.height == 1280) 
 				{
-		    		document.getElementById('mainWebsite').style.height='600px';
+		    		document.getElementById('mainWebsite').style.height='1152px';
 		   		}
 		   		if (window.screen.height == 800) 
 				{
-		    		document.getElementById('mainWebsite').style.height='697px';
+		    		document.getElementById('mainWebsite').style.height='720px';
 		   		}
 		   		document.getElementById('menu').style.display='block';
 				document.getElementById('photoview').style.display='none';
