@@ -6,11 +6,7 @@
 
 
 body{
-	overflow-x: hidden;
-	overflow-y: scroll;
-   position:relative;
 	background-color:#244377;
-	overflow: hidden;
 }
 
 
@@ -79,8 +75,11 @@ a, a:hover, a:active, a:visited { color: white; text-decoration:none;}
 #mainWebsite
 {
     display:block;
-    position:relative;
-}
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:block;
+    }
 #photoview{
     height:90.1%;
     display:none;
@@ -126,6 +125,7 @@ button.camera-control:hover {
  
 #optionsbutton{
     float:right;
+    height:100%
 }
 #options{
       height:94.5%;
@@ -140,7 +140,7 @@ button.camera-control:hover {
 }
 #cameraimage{
     position:absolute;
-    left:18%;
-    height:80%;
-    width:80%;
+    left:22%;
+    height:75%;
+    width:75%;
 }

@@ -29,7 +29,7 @@
     
 	function loadIntern()
 	{
-		localStorage['startpage'] = "http://ixpdev/mgr/";
+		localStorage['urlother'] = "http://ixpdev.smartsite.seneca.intern/Mgr/Add-Item";
 		showPage("other");
 	}
 	function loadExtern()
@@ -67,7 +67,6 @@
   			url = "http://" + url;
   		}
   		localStorage['startpage'] = url;
-  		alert(url);
   	}
   	else{
   		alert("enter something");
@@ -85,7 +84,6 @@
 var getLocation = function() {
     var suc = function(p) {
         var cords = p.coords.latitude + " " + p.coords.longitude ;
-        alert(cords);
         showlocation(cords);
     };
     var locFail = function() {
@@ -248,22 +246,32 @@ navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 function uploadPhoto(imageURI) 
 	{
 			cameraPic.src = imageURI;
-            var options = new FileUploadOptions();
-            options.fileKey="files";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.chunkedMode = false;
-            options.mimeType="image/jpeg";
+			
+			var answer = confirm ("Upload the picture?")
+			if (answer)
+			{
+				var options = new FileUploadOptions();
+	            options.fileKey="files";
+	            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+	            options.chunkedMode = false;
+	            options.mimeType="image/jpeg";
+	            
+	 
+	            var params = new Object();
+	            params.value1 = "test";
+	            params.value2 = "param";
+	 
+	            options.params = params;
+	            options.chunkedMode = false;
+	 
+	            var ft = new FileTransfer();
+	            ft.upload(imageURI, "http://ixpdev.smartsite.seneca.intern/Pub/TestUpload", win, fail, options);	
+			}
+			else
+			{
+				alert ("Picture upload cancelled by user");
+			}
             
- 
-            var params = new Object();
-            params.value1 = "test";
-            params.value2 = "param";
- 
-            options.params = params;
-            options.chunkedMode = false;
- 
-            var ft = new FileTransfer();
-            ft.upload(imageURI, "http://ixpdev.smartsite.seneca.intern/Pub/TestUpload", win, fail, options);
 	}
 function win(r) 
 		{
@@ -275,10 +283,9 @@ function win(r)
 
 
 function win(r) { 
-			alert("success");
      	     //console.log("Code = " + r.responseCode); 
             //console.log("Response = " + r.response); 
-            alert("Sent = " + r.bytesSent); 
+			alert("Image uploaded");
         } 
 
         function fail(error) { 

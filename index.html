@@ -10,22 +10,22 @@
 		    // doesn't have a scroll button
 		    document.addEventListener("touchmove", preventBehavior, false);
 		   // document.addEventListener("deviceready", deviceInfo, true);
-			alert(window.screen.height);
+	//		alert(window.screen.height);
 			document.ontouchmove = function(e) 
 			{
 			}
-				if (window.screen.height == 1080) 
-				{
-		    		document.getElementById('mainWebsite').style.height='972px';
-		   	}
-		   		if (window.screen.height == 1280) 
-				{
-		    		document.getElementById('mainWebsite').style.height='1152px';
-		   		}
-		   		if (window.screen.height == 800) 
-				{
-		    		document.getElementById('mainWebsite').style.height='720px';
-		   		}
+		//		if (window.screen.height == 1080) 
+		//		{
+		//    		document.getElementById('mainWebsite').style.height='972px';
+		//   	}
+		//   		if (window.screen.height == 1280) 
+		//		{
+		//    		document.getElementById('mainWebsite').style.height='1152px';
+		//   		}
+		 //  		if (window.screen.height == 800) 
+		//		{
+		 //   		document.getElementById('mainWebsite').style.height='720px';
+		 //  		}
 		   		document.getElementById('menu').style.display='block';
 				document.getElementById('photoview').style.display='none';
 				document.getElementById('options').style.display='none';
@@ -41,16 +41,16 @@
 				
 				<div id="photoview">
     				<div id="camera">
-						<div id="camerabuttons">
-    						<div><button class="camera-control" onclick="capturePhoto();">Capture Photo</button></div>
-     						<div><button class="camera-control" onclick="backCamera();">Back</button></div>
-    						
-    					</div>
-    					<div id="cameraimage">
-	        				<img id="cameraPic" src="" alt="Image">
-						</div>	
+
+    					<div style="float:left;"><button class="camera-control" onclick="capturePhoto();">Capture Photo</button></div>
+     					<div style="float:left;"><button class="camera-control" onclick="backCamera();">Back</button></div>
+        					
+
 					</div>
-				</div>
+						<div id="cameraimage">
+							<img id="cameraPic" src="untitled.png" style="width:100%;height:100% ">
+						</div>
+    				</div>
 					
 				<div id="options">
 					<ul>
@@ -62,13 +62,14 @@
 					<ul>
 						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage()"><li id="button1">go to startpage</li></a>
 						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern()"><li id="button2">Add item</li></a>
-						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern</li></a>
+						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern()"><li id="button3">Load extern CMS</li></a>
 						<li><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></li>
 						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="showPhotoView()"> <li id="button4">Getphoto</li></a>
 					</ul>  
 				</div> 
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
 		</div>
+		
     </body>
     <script src="phonegap.js"></script>
     <script src="childbrowser.js"></script>
