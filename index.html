@@ -41,13 +41,14 @@
 				
 				<div id="photoview">
     				<div id="camera">
-
-    					<button class="camera-control" onclick="capturePhoto();">Capture Photo</button>
-     					<button class="camera-control" onclick="backCamera();">Back</button>
-    					<div style="text-align:center;">
-        					<img id="cameraPic" src="" style="width:500px;height:400px;">
+						<div id="camerabuttons">
+    						<div><button class="camera-control" onclick="capturePhoto();">Capture Photo</button></div>
+     						<div><button class="camera-control" onclick="backCamera();">Back</button></div>
+    						
     					</div>
-
+    					<div id="cameraimage">
+	        				<img id="cameraPic" src="" style="float:left; ">
+						</div>	
 					</div>
 				</div>
 					
@@ -68,7 +69,6 @@
 				</div> 
 			<div id="bottombar"><a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca</a></div> 
 		</div>
-		
     </body>
     <script src="phonegap.js"></script>
     <script src="childbrowser.js"></script>
