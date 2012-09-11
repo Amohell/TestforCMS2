@@ -218,6 +218,7 @@ function showPhotoView()
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='block';
 	document.getElementById('options').style.display='none';
+	document.getElementById('options').style.display='none';
 }
 function backCamera()
 {
