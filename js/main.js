@@ -241,56 +241,48 @@ function openOptions()
 	document.getElementById('options').style.display='block';
 	}
 }
-// use an existing photo from the library:
-function useExistingPhoto(e) {
-  this.capture(Camera.PictureSourceType.SAVEDPHOTOALBUM);
-};
+function capturePhoto(){
+navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
+}
 
-// take a new photo:
-function takePhoto(e) {
-  this.capture(Camera.PictureSourceType.CAMERA);
-};
+function uploadPhoto(imageURI) 
+	{
+			cameraPic.src = imageURI;
+            var options = new FileUploadOptions();
+            options.fileKey="files";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.chunkedMode = false;
+            options.mimeType="image/jpeg";
+            
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://ixpdev.smartsite.seneca.intern/Pub/TestUpload", win, fail, options);
+	}
+function win(r) 
+		{
+        	console.log("Code = " + r.responseCode);
+			console.log("Response = " + r.response);
+			console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        }
 
-// capture either new or existing photo:
-function capture(sourceType) {
-  navigator.camera.getPicture(this.onCaptureSuccess, this.onCaptureFail, {
-    destinationType: Camera.DestinationType.FILE_URI,
-    sourceType: sourceType,
-    correctOrientation: true
-  });
-};
 
-// if photo is captured successfully, then upload to server:
-function onCaptureSuccess(imageURI) {
-  var fail, ft, options, params, win;
-  // callback for when the photo has been successfully uploaded:
-function success(response) {
-	cameraPic.src = imageURI;
-    alert("Your photo has been uploaded!");
-  };
-  // callback if the photo fails to upload successfully.
-function fail(error) {
-    alert("An error has occurred: Code = " + error.code);
-  };
-  options = new FileUploadOptions();
-  // parameter name of file:
-  options.fileKey = "files";
-  // name of the file:
-  options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
-  // mime type:
-  options.mimeType = "text/plain";
-  options.chunkedMode = false;
-  params = {
-    val1: "some value",
-    val2: "some other value"
-  };
-  options.params = params;
-  ft = new FileTransfer();
-  ft.upload(imageURI, 'http://ixpdev.smartsite.seneca.intern/Pub/TestUpload', success, fail, options, true);
-};
+function win(r) { 
+			alert("success");
+     	     //console.log("Code = " + r.responseCode); 
+            //console.log("Response = " + r.response); 
+            alert("Sent = " + r.bytesSent); 
+        } 
 
-// there was an error capturing the photo:
-function onCaptureFail(message) {
-  alert("Failed because: " + message);
-};
+        function fail(error) { 
+            alert("An error has occurred: Code = " + error.code); 
+        } 
+
   
