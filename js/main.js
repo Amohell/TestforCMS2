@@ -50,7 +50,7 @@
 			loadStartpage()
 		}
 		else{
-			showPage("start");;
+			showPage("start");
 		}
 	}
 	
@@ -222,17 +222,17 @@ function showPhotoView()
 }
 function backCamera()
 {
-	document.getElementById('menu').style.display='block';
 	document.getElementById('photoview').style.display='none';
+	document.getElementById('menu').style.display='block';
 	document.getElementById('options').style.display='none';
 }
 function openOptions()
 {
 	if(document.getElementById('options').style.display == 'block')
 	{
-		document.getElementById('menu').style.display='block';
-		document.getElementById('photoview').style.display='none';
 		document.getElementById('options').style.display='none';
+		document.getElementById('menu').style.display='block';
+		document.getElementById('photoview').style.display='none';	
 	}
 	else{
 	document.getElementById('menu').style.display='none';
