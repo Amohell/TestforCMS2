@@ -305,7 +305,7 @@ function saveUsername()
 }
 function handleLogin()
 {
-	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Pub/TestUpload",
+	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin",
             { showLocationBar: true });
     var loginField = document.getElementById("txtUserName");
     var passwordField = document.getElementById("txtPassword");
