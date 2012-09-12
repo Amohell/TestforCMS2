@@ -291,9 +291,27 @@ function win(r) {
             //console.log("Response = " + r.response); 
 			alert("Image uploaded");
         } 
-
-        function fail(error) { 
+    
+function fail(error) { 
             alert("An error has occurred: Code = " + error.code); 
-        } 
+        }
+        
+        
+function saveUsername()
+{
+	localStorage['username'] = document.getElementById("username").value;
+	localStorage['password'] = document.getElementById("password").value;
+	handleLogin();
+}
+function handleLogin()
+{
+	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Pub/TestUpload",
+            { showLocationBar: true });
+    var loginField = document.getElementById("txtUserName");
+    var passwordField = document.getElementById("txtPassword");
+    loginField.value = localStorage['username'];
+    passwordField.value = localStorage['password'];
+    //document.form.button.click()
+}
 
   

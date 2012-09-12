@@ -8,16 +8,17 @@
 				// the next line makes it impossible to see Contacts on the HTC Evo since it
 				// doesn't have a scroll button
 				document.addEventListener("touchmove", preventBehavior, false);
-			   // document.addEventListener("deviceready", deviceInfo, true);
+			   	document.addEventListener("deviceready", deviceInfo, true);
 				alert(window.screen.height);
 				document.ontouchmove = function(e) 
 				{
 				}
 			}
+			delete init;
 	</script>
     </head>
 		
-    <body onload="setPageSize()">
+    <body onload="init()">
     	
 		<div id="mainWebsite">
 			<div id="titlebar"><span id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seneca CMS</span><span id="optionsbutton"><a href="#"  onclick="openOptions()"><img src="images/options.png" height="100%" width="50px"></a></span></div>
@@ -36,6 +37,11 @@
 				<div id="options">
 					<ul>
 					<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL();"><li id="button6">Set startpage</li></a>
+					<li id="button7">
+						Username<input type="text" id="username">
+						Password<input type="password" id="password"><br /><br>
+						<button class="camera-control" id="saveLogin" onclick="saveUsername();">Save Login</button>
+					</li>
 					</ul>
 				</div>
     			
