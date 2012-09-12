@@ -7,6 +7,7 @@
 
 body{
 	background-color:#244377;
+	overflow: hidden;
 }
 
 
@@ -74,9 +75,9 @@ a, a:hover, a:active, a:visited { color: white; text-decoration:none;}
 
 #mainWebsite
 {
-    position:fixed;
+  /*  position:fixed;
     width:100%;
-    height:100%;
+    height:100%;*/
     }
 #photoview{
     height:90.1%;
@@ -136,9 +137,9 @@ button.camera-control:hover {
     width:160px;
 }
 #cameraimage{
-    position:absolute;
+  /*  position:absolute;
     left:12%;
-    top:12%;
+    top:12%;*/
     height:75%;
     width:75%;
 }
