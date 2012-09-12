@@ -299,7 +299,7 @@ function fail(error) {
         
 function showLogin()
 {
-	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/Mgr/loginmanager")
+	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
 	{
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='none';
@@ -313,7 +313,7 @@ function showLogin()
 }
 function pageLoaded()
 {	
-	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/Mgr/loginmanager")
+	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
 	{
 		
 	}
