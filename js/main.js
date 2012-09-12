@@ -307,11 +307,16 @@ function handleLogin()
 {
 	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin",
             { showLocationBar: true });
+            
+    if(onPageFinished())
+    {
+    alert("page finished");
     var loginField = document.getElementById("txtUserName");
     var passwordField = document.getElementById("txtPassword");
     loginField.value = localStorage['username'];
     passwordField.value = localStorage['password'];
     //document.form.button.click()
+    }
 }
 
   
