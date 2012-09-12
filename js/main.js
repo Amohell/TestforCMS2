@@ -308,8 +308,8 @@ function handleLogin()
 	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin",
             { showLocationBar: true });
             
-    alert(onPageFinished());
-    if(onPageFinished())
+    alert(window.plugins.childBrowser.onPageFinished());
+    if(window.plugins.childBrowser.onPageFinished())
     {
     alert("page finished");
     var loginField = document.getElementById("txtUserName");
