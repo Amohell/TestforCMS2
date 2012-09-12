@@ -75,9 +75,10 @@ a, a:hover, a:active, a:visited { color: white; text-decoration:none;}
 
 #mainWebsite
 {
-  /*  position:fixed;
+    position:absolute;
+    z-index: 15;
     width:100%;
-    height:100%;*/
+    height:100%;
     }
 #photoview{
     height:90.1%;

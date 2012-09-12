@@ -217,9 +217,7 @@ function toggleCompass() {
 
 function showPhotoView()
 {
-	alert("showPhotoView");
 	document.getElementById('menu').style.display='none';
-	alert("menuhidden");
 	document.getElementById('photoview').style.display='block';
 	document.getElementById('options').style.display='none';
 }
