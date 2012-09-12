@@ -121,7 +121,9 @@ button.camera-control:hover {
     box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white; 
 
     }
-    
+#login{
+    display:none;
+}    
  
 #optionsbutton{
     float:right;

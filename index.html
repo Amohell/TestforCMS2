@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<html>
     <head>
     	<title>TestforCMS</title>
     	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    	<script src="js/main.js"></script>
+    	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    	<script src="js/main.js" charset=""UTF-8" "></script>
 		<script type="text/javascript" charset="utf-8">
-			function setPageSize() {
+			function init() {
 				// the next line makes it impossible to see Contacts on the HTC Evo since it
 				// doesn't have a scroll button
 				document.addEventListener("touchmove", preventBehavior, false);
 			   	document.addEventListener("deviceready", deviceInfo, true);
-				alert(window.screen.height);
 				document.ontouchmove = function(e) 
 				{
 				}
@@ -19,7 +19,7 @@
     </head>
 		
     <body onload="init()">
-    	
+    	 
 		<div id="mainWebsite">
 			<div id="titlebar"><span id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seneca CMS</span><span id="optionsbutton"><a href="#"  onclick="openOptions()"><img src="images/options.png" height="100%" width="50px"></a></span></div>
 				<div id="photoview">
@@ -36,13 +36,13 @@
 					
 				<div id="options">
 					<ul>
-					<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL();"><li id="button6">Set startpage</li></a>
-					<li id="button7">
-						Username<input type="text" id="username">
-						Password<input type="password" id="password"><br /><br>
-						<button class="camera-control" id="saveLogin" onclick="saveUsername();">Save Login</button>
-					</li>
+						<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL();"><li id="button6">Set startpage</li></a>
+						<a href="#" onmouseover="document.getElementById('button7').style.backgroundColor='red'" onmouseout="document.getElementById('button7').style.backgroundColor='#68a0ec'" onclick="showLogin();"><li id="button7">Login info</li></a>
 					</ul>
+				</div>
+				
+				<div id="login">
+					<iframe src="http://ixpdev.smartsite.seneca.intern/mgr/managerlogin" onload="pageLoaded();" id="loginFrame" height="100%" width="100%" >No frame support</iframe>
 				</div>
     			
 				<div id="menu">

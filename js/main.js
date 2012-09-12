@@ -297,24 +297,38 @@ function fail(error) {
         }
         
         
-function saveUsername()
+function showLogin()
 {
-	localStorage['username'] = document.getElementById("username").value;
-	localStorage['password'] = document.getElementById("password").value;
-	handleLogin();
-}
-function handleLogin()
-{
-	window.location="http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin";
-	if (document.readyState === "complete") 
+	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/Mgr/loginmanager")
 	{
-    	alert("page finished");
-    	var loginField = document.getElementById("txtUserName");
-    	var passwordField = document.getElementById("txtPassword");
-    	loginField.value = localStorage['username'];
-    	passwordField.value = localStorage['password'];
-    	//document.form.button.click()
-    }
+	document.getElementById('menu').style.display='none';
+	document.getElementById('photoview').style.display='none';
+	document.getElementById('options').style.display='none';
+	document.getElementById('login').style.display='block';
+	}
+	else
+	{
+		alert("Already logged in")
+	}
 }
+function pageLoaded()
+{	
+	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/Mgr/loginmanager")
+	{
+		
+	}
+	else{
+		document.getElementById('menu').style.display='none';
+		document.getElementById('photoview').style.display='none';
+		document.getElementById('options').style.display='block';
+		document.getElementById('login').style.display='none';
+	}
+}
+function getSrc(obj) {
+	return obj.src;
+}
+
+
+
 
   
