@@ -34,12 +34,12 @@
 	}
 	function loadExtern()
 	{
-		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' ;
 		showPage("other");
 	}
 	function loadExternalBrowser()
 	{
-		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
+		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' ;
 		showPage("other");
 	}
 	function loadStartpage()
@@ -52,6 +52,11 @@
 		else{
 			showPage("start");
 		}
+	}
+	function openProfile()
+	{
+		localStorage['urlother'] = 'http://ixpdev.smartsite.seneca.intern/Mgr/ManagerProfile' ;
+		showPage("other");
 	}
 	
 	
@@ -301,6 +306,7 @@ function fail(error) {
         
 function showLogin()
 {
+	alert(getSrc(document.getElementById('loginFrame')))
 	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
 	{
 	document.getElementById('menu').style.display='none';
