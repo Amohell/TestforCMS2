@@ -127,8 +127,10 @@ button.camera-control:hover {
     height:100%
 }
 #options{
-      height:94.5%;
+    height:90.1%;
     display:none;
+    float:left;
+    width:100%;
 }
 #cameraPic{
     height:80%;
