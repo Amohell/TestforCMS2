@@ -308,6 +308,7 @@ function handleLogin()
 	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin",
             { showLocationBar: true });
             
+    alert(onPageFinished());
     if(onPageFinished())
     {
     alert("page finished");
