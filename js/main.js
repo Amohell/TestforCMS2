@@ -305,18 +305,15 @@ function saveUsername()
 }
 function handleLogin()
 {
-	window.plugins.childBrowser.showWebPage("http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin",
-            { showLocationBar: true });
-            
-    alert(window.plugins.childBrowser.onPageFinished());
-    if(window.plugins.childBrowser.onPageFinished())
-    {
-    alert("page finished");
-    var loginField = document.getElementById("txtUserName");
-    var passwordField = document.getElementById("txtPassword");
-    loginField.value = localStorage['username'];
-    passwordField.value = localStorage['password'];
-    //document.form.button.click()
+	window.location="http://ixpdev.smartsite.seneca.intern/Mgr/ManagerLogin";
+	if (document.readyState === "complete") 
+	{
+    	alert("page finished");
+    	var loginField = document.getElementById("txtUserName");
+    	var passwordField = document.getElementById("txtPassword");
+    	loginField.value = localStorage['username'];
+    	passwordField.value = localStorage['password'];
+    	//document.form.button.click()
     }
 }
 
