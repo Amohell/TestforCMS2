@@ -233,13 +233,15 @@ function openOptions()
 	{
 		document.getElementById('options').style.display='none';
 		document.getElementById('menu').style.display='block';
-		document.getElementById('photoview').style.display='none';	
+		document.getElementById('photoview').style.display='none';
+		document.getElementById('login').style.display='none';	
 	}
 	else
 	{
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='none';
 	document.getElementById('options').style.display='block';
+	document.getElementById('login').style.display='none';	
 	}
 }
 function capturePhoto()
@@ -324,7 +326,8 @@ function pageLoaded()
 		document.getElementById('login').style.display='none';
 	}
 }
-function getSrc(obj) {
+function getSrc(obj) 
+{
 	return obj.src;
 }
 
