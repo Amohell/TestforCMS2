@@ -12,14 +12,14 @@ color:#fff;
  
 #txt
 {
-font-size: 20px;
+font-size: 100%;
 font-family: "Segoe UI", Tahoma, Verdana, Arial;
 }
 .status
 {
     
-border-bottom:solid 1px #DEDEDE;
-font-size: 20px;
+
+font-size: 100%;
 background:transparent;
 border:#eaeaea 2px;
 }
@@ -40,7 +40,7 @@ width:3%;
 height:5%;
 }
 .twitter_posted_at{
-font-size:20px;
+font-size:100%;
 color:#999
 }
 
@@ -70,7 +70,6 @@ color:#999
 }
 #bottombar
 {
-    border:black solid 1px;
     height:5%;
     width:100%;
     float:left;   
