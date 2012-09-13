@@ -6,7 +6,8 @@
     	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
     	<script src="js/main.js" charset=""UTF-8" "></script>
 		<script type="text/javascript" charset="utf-8">
-			function init() {
+			function init() 
+			{
 				// the next line makes it impossible to see Contacts on the HTC Evo since it
 				// doesn't have a scroll button
 				document.addEventListener("touchmove", preventBehavior, false);
@@ -15,6 +16,37 @@
 				{
 				}
 			}
+			function onDeviceReady() 
+			{
+				document.addEventListener("backbutton", onBackKeyDown, false);
+    		}
+    		
+    		function onBackKeyDown() 
+    		{
+    			if(document.getElementById('options').style.display == 'block')
+    			{
+    				document.getElementById('options').style.display='none';
+					document.getElementById('menu').style.display='block';
+					document.getElementById('photoview').style.display='none';
+					document.getElementById('login').style.display='none';
+    			}
+    			if(document.getElementById('login').style.display == 'block')
+    			{
+    				document.getElementById('options').style.display='none';
+					document.getElementById('menu').style.display='block';
+					document.getElementById('photoview').style.display='none';
+					document.getElementById('login').style.display='none';
+    			}
+    			if(document.getElementById('photoview').style.display == 'block')
+    			{
+    				document.getElementById('options').style.display='none';
+					document.getElementById('menu').style.display='block';
+					document.getElementById('photoview').style.display='none';
+					document.getElementById('login').style.display='none';
+    			}
+
+    		}
+			
 			delete init;
 	</script>
     </head>
