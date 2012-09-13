@@ -5,13 +5,16 @@
     	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
     	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
     	<script src="js/main.js" charset=""UTF-8" "></script>
+    	<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+    	<script src="childbrowser.js"></script>
 		<script type="text/javascript" charset="utf-8">
+		
 			function init() 
 			{
 				// the next line makes it impossible to see Contacts on the HTC Evo since it
 				// doesn't have a scroll button
 				document.addEventListener("touchmove", preventBehavior, false);
-			   	document.addEventListener("deviceready", deviceInfo, true);
+			    document.addEventListener("deviceready", onDeviceReady, false);
 				document.ontouchmove = function(e) 
 				{
 				}
@@ -23,6 +26,7 @@
     		
     		function onBackKeyDown() 
     		{
+    			alert("you pressed back");
     			if(document.getElementById('options').style.display == 'block')
     			{
     				document.getElementById('options').style.display='none';
@@ -98,7 +102,6 @@
 		</div> 
 	</div> 
     </body>
-    <script src="phonegap.js"></script>
-    <script src="childbrowser.js"></script>
+
     
 </html>
