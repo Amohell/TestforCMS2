@@ -24,12 +24,12 @@ border:#eaeaea 2px;
 }
 .status a
 {
-color:#3cf;
+color:red;
 text-decoration:none;
 font-size: 11px;
 }
 .status a:hover{
-color:#3cf;
+color:blue;
 text-decoration:underline
 }
 .twitter_image{
@@ -89,9 +89,9 @@ li
     text-align: center;
     background-color:#68a0ec;
 }
-ul
+.ul1
 {
-    height:16.5%;
+    height:16.6%;
     list-style-type: none;
     margin: 0;
 	padding: 0;

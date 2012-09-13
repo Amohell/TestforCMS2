@@ -21,7 +21,7 @@
 			function ptweet(read)
 			{
 			var tdata='';
-			for(i=0;i<6;i++)
+			for(i=0;i<5;i++)
 			{
 			data =read[i];
 			var id=data.id;
@@ -30,7 +30,7 @@
 			var screen_name=data.user.screen_name;
 			var image=data.user.profile_image_url;
 			var source=data.source;
-			tdata+="<div style='float:left; width:100%; margin-top:2px; border-bottom:solid 1px black; vertical-align:center;'><span class='status' id='"+id+"'><img src="+image+" class='twitter_image'/><a href='http://twitter.com/"+screen_name+"'>"+screen_name+"</a><span id='txt'>"+text+"<span class='twitter_posted_at'><span class='timeago' title='"+created_time+"'></span><i> </i></span></span></span></div>";
+			tdata+="<div style='float:left; width:100%; margin-top:2px; border-bottom:solid 1px black; vertical-align:center;'><span class='status' id='"+id+"'><img src="+image+" class='twitter_image'/><a href='http://twitter.com/"+screen_name+"'>"+screen_name+"<span id='txt'>"+text+"<span class='twitter_posted_at'><span class='timeago' title='"+created_time+"'></span><i> </i></span></span></span></div></a>";
 			 
 			}
 			document.getElementById("tweets").innerHTML=tdata;
@@ -38,7 +38,6 @@
 			
 			function init() 
 			{
-				alert('Your resolution is '+screen.width+'x'+screen.height);
 				document.addEventListener("touchmove", preventBehavior, false);
 			    document.addEventListener("deviceready", onDeviceReady, false);
 				document.ontouchmove = function(e) 
@@ -120,7 +119,7 @@
 				</div>
 					
 				<div id="options">
-					<ul>
+					<ul class="ul1">
 						<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL();"><li id="button6">Set startpage</li></a>
 						<a href="#" onmouseover="document.getElementById('button7').style.backgroundColor='red'" onmouseout="document.getElementById('button7').style.backgroundColor='#68a0ec'" onclick="showLogin();"><li id="button7">Login info</li></a>
 					</ul>
@@ -131,13 +130,13 @@
 				</div>
     			
 				<div id="menu">
-					<ul>
+					<ul class="ul1">
 						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage();"><li id="button1">go to startpage</li></a>
 						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern();"><li id="button2">Add item</li></a>
 						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern();"><li id="button3">Load extern</li></a>
 						<li><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></li>
 						<a href="#" onmouseover="document.getElementById('button4').style.backgroundColor='red'" onmouseout="document.getElementById('button4').style.backgroundColor='#68a0ec'" onclick="showPhotoView();"> <li id="button4">Getphoto</li></a>
-						<li style="text-align:left; overflow:no"><div id="tweets">Loadin</div></li>
+						<li><div id="tweets">Loadin</div></li>
 					</ul>  
 				</div> 
 				
