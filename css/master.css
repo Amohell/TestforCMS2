@@ -158,6 +158,10 @@ button.camera-control:hover {
 }    
  
 #optionsbutton{
+    float:left;
+    height:100%
+}
+#profilebutton{
     float:right;
     height:100%
 }
