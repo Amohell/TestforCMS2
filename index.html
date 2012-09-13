@@ -39,10 +39,23 @@
 			function init() 
 			{
 				alert(screen.width);
-				if(screen.width == 800)
+				if(screen.width == 1920)
 				{
 					document.getElementById('ul1').style.height = "132.48px";
 					document.getElementById('ul2').style.height = "132.48px";
+					var ul1 = document.getElementById('ul1');
+ 
+					 if (ul1.hasChildNodes()) {
+  					   // Get all children of node
+  					   var children = ul1.childNodes;               
+
+  					   // Loop through the children
+  					   for(var c=0; c < children.length; c++) {
+  					    if(children[c].style) {
+  					     children[c].style.height = '132.48px';
+     					 }		
+    			 }
+ }	
 				}
 				document.addEventListener("touchmove", preventBehavior, false);
 			    document.addEventListener("deviceready", onDeviceReady, false);
