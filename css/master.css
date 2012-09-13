@@ -5,9 +5,43 @@
 }
 
 
-body{
-	background-color:#244377;
-	overflow: hidden;
+body{background:#000;}
+.status{
+color:#fff;
+}    
+ 
+#txt
+{
+font-size: 20px;
+font-family: "Segoe UI", Tahoma, Verdana, Arial;
+}
+.status
+{
+    
+border-bottom:solid 1px #DEDEDE;
+font-size: 20px;
+background:transparent;
+border:#eaeaea 2px;
+}
+.status a
+{
+color:#3cf;
+text-decoration:none;
+font-size: 30px;
+}
+.status a:hover{
+color:#3cf;
+text-decoration:underline
+}
+.twitter_image{
+float:left;
+margin-right:10px;
+width:3%;
+height:5%;
+}
+.twitter_posted_at{
+font-size:20px;
+color:#999
 }
 
 
