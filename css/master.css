@@ -84,14 +84,14 @@ color:#999
 li
 {
     border-bottom:black solid 1px;
-    height:121.3px;
+    height:100%;
     width:100%;
     text-align: center;
     background-color:#68a0ec;
 }
-.ul1
+#ul1
 {
-    height:728px;
+    height:16.56%;
     list-style-type: none;
     margin: 0;
 	padding: 0;

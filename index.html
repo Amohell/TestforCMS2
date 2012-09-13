@@ -21,7 +21,7 @@
 			function ptweet(read)
 			{
 			var tdata='';
-			for(i=0;i<5;i++)
+			for(i=0;i<3;i++)
 			{
 			data =read[i];
 			var id=data.id;
@@ -38,11 +38,18 @@
 			
 			function init() 
 			{
+				alert(screen.width);
+				if(screen.width == 800)
+				{
+					document.getElementById('ul1').style.height = "132.48px";
+					document.getElementById('ul2').style.height = "132.48px";
+				}
 				document.addEventListener("touchmove", preventBehavior, false);
 			    document.addEventListener("deviceready", onDeviceReady, false);
 				document.ontouchmove = function(e) 
 				{
 				}
+				
 			}
 			function onDeviceReady() 
 			{
@@ -124,7 +131,7 @@
 				</div>
 					
 				<div id="options">
-					<ul class="ul1">
+					<ul id="ul2">
 						<a href="#" onmouseover="document.getElementById('button6').style.backgroundColor='red'" onmouseout="document.getElementById('button6').style.backgroundColor='#68a0ec'" onclick="saveURL();"><li id="button6">Set startpage</li></a>
 						<a href="#" onmouseover="document.getElementById('button7').style.backgroundColor='red'" onmouseout="document.getElementById('button7').style.backgroundColor='#68a0ec'" onclick="showLogin();"><li id="button7">Login info</li></a>
 					</ul>
@@ -135,7 +142,7 @@
 				</div>
     			
 				<div id="menu">
-					<ul class="ul1">
+					<ul id="ul1">
 						<a href="#" onmouseover="document.getElementById('button1').style.backgroundColor='red'" onmouseout="document.getElementById('button1').style.backgroundColor='#68a0ec'" onclick="loadStartpage();"><li id="button1">go to startpage</li></a>
 						<a href="#" onmouseover="document.getElementById('button2').style.backgroundColor='red'" onmouseout="document.getElementById('button2').style.backgroundColor='#68a0ec'" onclick="loadIntern();"><li id="button2">Add item</li></a>
 						<a href="#" onmouseover="document.getElementById('button3').style.backgroundColor='red'" onmouseout="document.getElementById('button3').style.backgroundColor='#68a0ec'" onclick="loadExtern();"><li id="button3">Load extern</li></a>
