@@ -21,7 +21,7 @@
 			function ptweet(read)
 			{
 			var tdata='';
-			for(i=0;i<2;i++)
+			for(i=0;i<6;i++)
 			{
 			data =read[i];
 			var id=data.id;
@@ -30,7 +30,7 @@
 			var screen_name=data.user.screen_name;
 			var image=data.user.profile_image_url;
 			var source=data.source;
-			tdata+="<div style='float:left; width:100%; margin-top:2px; border-bottom:solid 1px black;'  ><span class='status' id='"+id+"'><img src="+image+" class='twitter_image'/><a href='http://twitter.com/"+screen_name+"'>"+screen_name+"</a><span id='txt'>"+text+"<span class='twitter_posted_at'><span class='timeago' title='"+created_time+"'></span><i> </i></span></span></span></div>";
+			tdata+="<div style='float:left; width:100%; margin-top:2px; border-bottom:solid 1px black; vertical-align:center;'><span class='status' id='"+id+"'><img src="+image+" class='twitter_image'/><a href='http://twitter.com/"+screen_name+"'>"+screen_name+"</a><span id='txt'>"+text+"<span class='twitter_posted_at'><span class='timeago' title='"+created_time+"'></span><i> </i></span></span></span></div>";
 			 
 			}
 			document.getElementById("tweets").innerHTML=tdata;

@@ -14,12 +14,11 @@ color:#fff;
 {
 font-size: 100%;
 font-family: "Segoe UI", Tahoma, Verdana, Arial;
+text-align: center;
 }
-.status
+.status    
 {
-    
-
-font-size: 100%;
+font-size: 11px;
 background:transparent;
 border:#eaeaea 2px;
 }
@@ -27,7 +26,7 @@ border:#eaeaea 2px;
 {
 color:#3cf;
 text-decoration:none;
-font-size: 30px;
+font-size: 11px;
 }
 .status a:hover{
 color:#3cf;
@@ -36,11 +35,11 @@ text-decoration:underline
 .twitter_image{
 float:left;
 margin-right:10px;
-width:3%;
-height:5%;
+width:1.1%;
+height:1.1%;
 }
 .twitter_posted_at{
-font-size:100%;
+font-size:11px;
 color:#999
 }
 
