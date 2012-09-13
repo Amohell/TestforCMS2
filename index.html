@@ -38,6 +38,7 @@
 			
 			function init() 
 			{
+				alert('Your resolution is '+screen.width+'x'+screen.height);
 				document.addEventListener("touchmove", preventBehavior, false);
 			    document.addEventListener("deviceready", onDeviceReady, false);
 				document.ontouchmove = function(e) 
