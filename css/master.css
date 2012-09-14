@@ -5,9 +5,9 @@
 }
 
 
-body{background:#000;}
+body{background:#244377;}
 .status{
-color:#fff;
+color:#244377;
 }    
  
 #txt
@@ -59,10 +59,10 @@ color:#999
 
 #titlebar
 {
-    border:black solid 1px;
     height:5%;
     width:100%;  
     float:left;
+    margin-bottom:2.1%;
     background-color:#244377;
     text-align:center;
     
@@ -72,6 +72,7 @@ color:#999
     height:5%;
     width:100%;
     float:left;   
+    margin-top:-2.1%;
     background-color:#244377;
     text-align:center;
 }
@@ -81,7 +82,7 @@ color:#999
     text-align:center;
     color:white;
 }
-#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #tweets
+#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8
 {
     border-bottom:black solid 1px;
     height:16.6666667%;
@@ -89,17 +90,26 @@ color:#999
     text-align: center;
     background-color:#68a0ec;
 }
-#ul1
+#tweets
 {
-    height:16.56%;
-    list-style-type: none;
-    margin: 0;
-	padding: 0;
+    border-bottom:black  solid 1px;
+    height:8.25%;
+    width:100%;
+    text-align: center;
+    background-color:#68a0ec;
+}
+#button1:hover, #button2:hover, #button3:hover, #button4:hover, #button5:hover, #button6:hover, #button7:hover, #button8:hover, #button4:hover
+{
+    background-color:red;
+}
+#tweets:hover
+{
+    background-color:red;
 }
 #menu
 {
     float:left;
-    height:90.1%;
+    height:90%;
     width:100%;
     display:block;
 }
@@ -113,14 +123,10 @@ a, a:hover, a:active, a:visited { color: white; text-decoration:none;}
     height:100%;
     }
 #photoview{
-    height:90.1%;
+    height:90%;
     display:none;
     float:left;
     width:100%;
-}
-#setstartpage
-{
-    position:absolute; top: 200px; left: 200px; width: 200px; color: red;
 }
 button.camera-control {
   background-color: #f3f3f3;
@@ -134,7 +140,7 @@ button.camera-control {
   border-radius: 5px;
   -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
   box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
-  color: #666;
+  color: #626;
   font: bold 16px "helvetica neue", helvetica, arial, sans-serif;
   padding: 7px 0;
 
@@ -166,7 +172,7 @@ button.camera-control:hover {
     height:100%
 }
 #options{
-    height:90.1%;
+    height:90%;
     display:none;
     float:left;
     width:100%;
