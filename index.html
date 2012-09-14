@@ -107,7 +107,7 @@
 					<a href="#"  onclick="openOptions()"><img src="images/options.png" height="80%" width="30px"></a>
 				</span>
 				<span id="title">
-				Seneca CMS
+				<a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca CMS</a>
 				</span>
 				<span id="profilebutton">
 					<a href="#"  onclick="openProfile()"><img src="images/ManagerProfile.png" height="80%" width="30px"></a>
@@ -140,13 +140,12 @@
 						<a href="#" onclick="loadExtern();"><div id="button3">Load extern</div></a>
 						<div id="button5"><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></div>
 						<a href="#" onclick="showPhotoView();"><div id="button4">Getphoto</div></a>
-						<div id="tweets">Loadin</div>:
+
 				</div> 
+			<div id="twittericon"><img src="twitter.png"></div>	
+			<div id="tweets">Loadin</div>
 				
-			<a href="#" onclick="loadIntern('http://www.seneca.nl/')"><div id="bottombar">Seneca
-				
-		</div> </a>
-	</div> 
+		</div>
     </body>
     
 	<script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=Senecabv&count=15&callback=ptweet"></script>

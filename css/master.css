@@ -12,7 +12,7 @@ color:#244377;
  
 #txt
 {
-font-size: 100%;
+font-size: 10px;
 font-family: "Segoe UI", Tahoma, Verdana, Arial;
 text-align: center;
 }
@@ -67,12 +67,12 @@ color:#999
     text-align:center;
     
 }
-#bottombar
+#tweets
 {
-    height:5%;
+    height:auto;
     width:100%;
-    float:left;   
-    margin-top:-2.1%;
+    float:left;
+    margin-top:-7.44%;   
     background-color:#244377;
     text-align:center;
 }
@@ -90,19 +90,8 @@ color:#999
     text-align: center;
     background-color:#68a0ec;
 }
-#tweets
-{
-    border-bottom:black  solid 1px;
-    height:8.25%;
-    width:100%;
-    text-align: center;
-    background-color:#68a0ec;
-}
+
 #button1:hover, #button2:hover, #button3:hover, #button4:hover, #button5:hover, #button6:hover, #button7:hover, #button8:hover, #button4:hover
-{
-    background-color:red;
-}
-#tweets:hover
 {
     background-color:red;
 }
