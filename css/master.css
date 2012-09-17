@@ -66,6 +66,7 @@ color:#999;
     margin-bottom:2.1%;
     background-color:#244377;
     text-align:center;
+    postion:relative;
     
 }
 #bottombar{
@@ -78,18 +79,13 @@ color:#999;
 }
 #tweets
 {
-    height:auto;
+    height:10%;
     width:100%;
     float:left;
     background-color:#244377;
     text-align:center;
 }
-#title
-{
-   
-    text-align:center;
-    color:white;
-}
+
 #button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8
 {
     border-bottom:black solid 1px;
@@ -106,7 +102,7 @@ color:#999;
 #menu
 {
     float:left;
-    height:87.9%;
+    height:85%;
     width:100%;
     display:block;
 }
@@ -158,7 +154,12 @@ button.camera-control:hover {
 #login{
     display:none;
 }    
- 
+ #title
+{
+    text-align:center;
+    color:white;
+    
+}
 #optionsbutton{
     float:left;
     height:100%;
