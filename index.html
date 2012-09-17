@@ -21,7 +21,7 @@
 			function ptweet(read)
 			{
 			var tdata='';
-			for(i=0;i<3;i++)
+			for(i=0;i<5;i++)
 			{
 			data =read[i];
 			var id=data.id;
@@ -38,11 +38,23 @@
 			
 			function init() 
 			{
-					
 				document.addEventListener("touchmove", preventBehavior, false);
 			    document.addEventListener("deviceready", onDeviceReady, false);
 				document.ontouchmove = function(e) 
 				{
+				}
+				if(screen.height == "800")
+				{
+				}
+				else{
+					document.getElementById('button1').style.height='16.66667%';
+					document.getElementById('button2').style.height='16.66667%';
+					document.getElementById('button3').style.height='16.66667%';
+					document.getElementById('button4').style.height='16.66667%';
+					document.getElementById('button5').style.height='16.66667%';
+					document.getElementById('button6').style.height='16.66667%';
+					document.getElementById('button7').style.height='16.66667%';
+					document.getElementById('button8').style.height='16.66667%';
 				}
 				
 			}
@@ -55,6 +67,7 @@
     		
     		function onBackKeyDown() 
     		{
+    			
     			if(document.getElementById('options').style.display == 'block')
     			{
     				document.getElementById('options').style.display='none';
@@ -107,7 +120,8 @@
 					<a href="#"  onclick="openOptions()"><img src="images/options.png" height="80%" width="30px"></a>
 				</span>
 				<span id="title">
-				<a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca CMS</a>
+				<a href="#" onclick="loadIntern('http://www.seneca.nl/')">Seneca CMS</a><br>
+				<input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location">
 				</span>
 				<span id="profilebutton">
 					<a href="#"  onclick="openProfile()"><img src="images/ManagerProfile.png" height="80%" width="30px"></a>
@@ -136,13 +150,13 @@
     			
 				<div id="menu">
 						<a href="#" onclick="loadStartpage();"><div id="button1">go to startpage</div></a>
-						<a href="#" onclick="loadIntern();"><div id="button2">Add item</div></a>
-						<a href="#" onclick="loadExtern();"><div id="button3">Load extern</div></a>
-						<div id="button5"><input type="button" onclick="getLocation()" value="Get location"> <input type="text" id="location"></div>
+						<a href="#" onclick="addItem();"><div id="button2">Add item</div></a>
+						<a href="#" onclick="editItem();"><div id="button5">Edit item</div></a>
+						<a href="#" onclick="loadExtern();"><div id="button3">Load extern</div></a>		
 						<a href="#" onclick="showPhotoView();"><div id="button4">Getphoto</div></a>
-
+						<div id="tweets">Loadin</div>
 				</div> 
-			<div id="tweets">Loadin</div>
+			<a href="#" onclick="loadSeneca()"><div id="bottombar">Seneca</div></a>
 				
 		</div>
     </body>

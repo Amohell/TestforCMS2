@@ -15,40 +15,31 @@
       		url = localStorage['startpage'];
 
     		 window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: false });
+            { showLocationBar: true });
         }
         if(sort == "other")
         {
         	url = localStorage['urlother'];
         	window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: false });
+            { showLocationBar: true });
         }
 	}
        //
     
-    function loadSeneca()
+    
+	function loadIntern()
 	{
-		localStorage['urlother'] = "http://seneca.nl";
-		showPage("other");
-	}
-	function addItem()
-	{
-		localStorage['urlother'] = "http://ixpdev.smartsite.seneca.intern/Mgr/Add-Item";
-		showPage("other");
-	}
-	function editItem()
-	{
-		localStorage['urlother'] = "http://ixpdev/Mgr/News-Library.mvc/select";
+		localStorage['startpage'] = "http://ixpdev/mgr/";
 		showPage("other");
 	}
 	function loadExtern()
 	{
-		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' ;
+		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
 		showPage("other");
 	}
 	function loadExternalBrowser()
 	{
-		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' ;
+		localStorage['urlother'] = 'http://demo.smartsite.nl/Mgr/ManagerLogin' 
 		showPage("other");
 	}
 	function loadStartpage()
@@ -59,13 +50,8 @@
 			loadStartpage()
 		}
 		else{
-			showPage("start");
+			showPage("start");;
 		}
-	}
-	function openProfile()
-	{
-		localStorage['urlother'] = 'http://ixpdev.smartsite.seneca.intern/Mgr/ManagerProfile' ;
-		showPage("other");
 	}
 	
 	
@@ -81,6 +67,7 @@
   			url = "http://" + url;
   		}
   		localStorage['startpage'] = url;
+  		alert(url);
   	}
   	else{
   		alert("enter something");
@@ -98,6 +85,7 @@
 var getLocation = function() {
     var suc = function(p) {
         var cords = p.coords.latitude + " " + p.coords.longitude ;
+        alert(cords);
         showlocation(cords);
     };
     var locFail = function() {
@@ -218,10 +206,8 @@ function toggleCompass() {
         navigator.compass.clearWatch(watchID);
         watchID = null;
         updateHeading({ magneticHeading : "Off"});
-    } else 
-    {        
-        var options = { frequency: 1000 
-        	};
+    } else {        
+        var options = { frequency: 1000 };
         watchID = navigator.compass.watchHeading(updateHeading, function(e) {
             alert('Compass Error: ' + e.code);
         }, options);
@@ -237,61 +223,47 @@ function showPhotoView()
 }
 function backCamera()
 {
-	document.getElementById('photoview').style.display='none';
 	document.getElementById('menu').style.display='block';
+	document.getElementById('photoview').style.display='none';
 	document.getElementById('options').style.display='none';
 }
 function openOptions()
 {
 	if(document.getElementById('options').style.display == 'block')
 	{
-		document.getElementById('options').style.display='none';
 		document.getElementById('menu').style.display='block';
 		document.getElementById('photoview').style.display='none';
-		document.getElementById('login').style.display='none';	
+		document.getElementById('options').style.display='none';
 	}
-	else
-	{
-		document.getElementById('menu').style.display='none';
-		document.getElementById('photoview').style.display='none';
-		document.getElementById('options').style.display='block';
-		document.getElementById('login').style.display='none';	
+	else{
+	document.getElementById('menu').style.display='none';
+	document.getElementById('photoview').style.display='none';
+	document.getElementById('options').style.display='block';
 	}
 }
-function capturePhoto()
-{
-navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
-}
+//function capturePhoto(){
+//navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
+//}
 
 function uploadPhoto(imageURI) 
 	{
 			cameraPic.src = imageURI;
-			
-			var answer = confirm ("Upload the picture?")
-			if (answer)
-			{
-				var options = new FileUploadOptions();
-	            options.fileKey="files";
-	            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-	            options.chunkedMode = false;
-	            options.mimeType="image/jpeg";
-	            
-	 
-	            var params = new Object();
-	            params.value1 = "test";
-	            params.value2 = "param";
-	 
-	            options.params = params;
-	            options.chunkedMode = false;
-	 
-	            var ft = new FileTransfer();
-	            ft.upload(imageURI, "http://ixpdev.smartsite.seneca.intern/Pub/TestUpload", win, fail, options);	
-			}
-			else
-			{
-				alert ("Picture upload cancelled by user");
-			}
+            var options = new FileUploadOptions();
+            options.fileKey="files";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.chunkedMode = false;
+            options.mimeType="image/jpeg";
             
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://ixpdev/Pub/TestUpload", win, fail, options);
 	}
 function win(r) 
 		{
@@ -303,50 +275,14 @@ function win(r)
 
 
 function win(r) { 
+			alert("success");
      	     //console.log("Code = " + r.responseCode); 
             //console.log("Response = " + r.response); 
-			alert("Image uploaded");
+            alert("Sent = " + r.bytesSent); 
         } 
-    
-function fail(error) { 
+
+        function fail(error) { 
             alert("An error has occurred: Code = " + error.code); 
-        }
-        
-        
-function showLogin()
-{
-	alert(getSrc(document.getElementById('loginFrame')))
-	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
-	{
-	document.getElementById('menu').style.display='none';
-	document.getElementById('photoview').style.display='none';
-	document.getElementById('options').style.display='none';
-	document.getElementById('login').style.display='block';
-	}
-	else
-	{
-		alert("Already logged in")
-	}
-}
-function pageLoaded()
-{	
-	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
-	{
-		
-	}
-	else{
-		document.getElementById('menu').style.display='none';
-		document.getElementById('photoview').style.display='none';
-		document.getElementById('options').style.display='block';
-		document.getElementById('login').style.display='none';
-	}
-}
-function getSrc(obj) 
-{
-	return obj.src;
-}
-
-
-
+        } 
 
   
