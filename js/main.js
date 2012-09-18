@@ -5,27 +5,22 @@
         }
     function showPage(sort) 
     {
+    	navigator.notification.activityStart();
     	if(sort == "start")
     	{
       		url = localStorage['startpage'];
 
     		 window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: false }); 
-            document.getElementById('options').style.display='none';
-			document.getElementById('menu').style.display='none';
-			document.getElementById('photoview').style.display='none';
-			document.getElementById('login').style.display='none';
+            
         }
         if(sort == "other")
         {
         	url = localStorage['urlother'];
         	window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: false });
-            document.getElementById('options').style.display='none';
-			document.getElementById('menu').style.display='none';
-			document.getElementById('photoview').style.display='none';
-			document.getElementById('login').style.display='none';
         }
+        navigator.notification.activityStop();
 	}
        //
     
@@ -99,14 +94,12 @@
 };
 
 var getLocation = function() {
+	navigator.notification.activityStart();
     var suc = function(p) {
         var cords = p.coords.latitude + " " + p.coords.longitude ;
         locationPhoto.src = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + p.coords.latitude+ ',' + p.coords.longitude +  
-                    "&zoom=14&size=300x400&markers=color:blue|label:S|" + p.coords.latitude + ',' + p.coords.longitude;  
-                    
-   //     localStorage['urlother'] = image_url;
- //  		showPage("other");
-        
+                    "&zoom=14&size=300x400&markers=color:blue|label:S|" + p.coords.latitude + ',' + p.coords.longitude;                     
+		navigator.notification.activityStop();      
     };
     var locFail = function() {
     };
