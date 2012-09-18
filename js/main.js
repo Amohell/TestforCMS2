@@ -9,15 +9,16 @@
     	if(sort == "start")
     	{
       		url = localStorage['startpage'];
-
-    		 window.plugins.childBrowser.showWebPage(url,
+			document.getElementById['windowload'].innerhtml ="<script> window.location.replace('"+ url +"');</script>";
+    		 window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
             { showLocationBar: false }); 
             
         }
         if(sort == "other")
         {
-        	url = localStorage['urlother'];
-        	window.plugins.childBrowser.showWebPage(url,
+        	url = localStorage['startpage'];
+			document.getElementById['windowload'].innerhtml ="<script> window.location.replace('"+ url +"');</script>";
+    		 window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
             { showLocationBar: false });
         }
         navigator.notification.activityStop();
