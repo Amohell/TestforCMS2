@@ -3,11 +3,6 @@
             window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
             { showLocationBar: true });
         }
-    function showlocation(cords)
-    {
-    	var locbox = document.getElementById('location');
-    	locbox.value = cords;
-    }
     function showPage(sort) 
     {
     	if(sort == "start")
@@ -98,7 +93,12 @@
 var getLocation = function() {
     var suc = function(p) {
         var cords = p.coords.latitude + " " + p.coords.longitude ;
-        showlocation(cords);
+        var image_url = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + p.coords.latitude+ ',' + p.coords.longitude +  
+                    "&zoom=14&size=300x400&markers=color:blue|label:S|" + p.coords.latitude + ',' + p.coords.longitude;  
+                    
+        localStorage['urlother'] = image_url;
+   		showPage("other");
+        
     };
     var locFail = function() {
     };
