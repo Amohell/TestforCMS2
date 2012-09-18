@@ -10,13 +10,21 @@
       		url = localStorage['startpage'];
 
     		 window.plugins.childBrowser.showWebPage(url,
-            { showLocationBar: false });
+            { showLocationBar: false }); 
+            document.getElementById('options').style.display='none';
+			document.getElementById('menu').style.display='none';
+			document.getElementById('photoview').style.display='none';
+			document.getElementById('login').style.display='none';
         }
         if(sort == "other")
         {
         	url = localStorage['urlother'];
         	window.plugins.childBrowser.showWebPage(url,
             { showLocationBar: false });
+            document.getElementById('options').style.display='none';
+			document.getElementById('menu').style.display='none';
+			document.getElementById('photoview').style.display='none';
+			document.getElementById('login').style.display='none';
         }
 	}
        //
