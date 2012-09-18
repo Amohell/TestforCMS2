@@ -8,16 +8,12 @@
     	navigator.notification.activityStart();
     	if(sort == "start")
     	{
-      		url = localStorage['startpage'];
-			document.getElementById['windowload'].innerhtml ="<script> window.location.replace('"+ url +"');</script>";
     		 window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
             { showLocationBar: false }); 
             
         }
         if(sort == "other")
         {
-        	url = localStorage['startpage'];
-			document.getElementById['windowload'].innerhtml ="<script> window.location.replace('"+ url +"');</script>";
     		 window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
             { showLocationBar: false });
         }
