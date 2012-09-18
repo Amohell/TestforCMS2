@@ -69,6 +69,7 @@
 	
    function saveURL()
    {
+   	navigator.notification.activityStart();
    	var url=prompt("Give url for the startpage","http://www.");
    	var subsurl = url.substr(0,4)
 	if (url!=null && url!="")
@@ -232,32 +233,36 @@ function toggleCompass() {
 
 function showPhotoView()
 {
+	navigator.notification.activityStart();
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='block';
 	document.getElementById('options').style.display='none';
+	navigator.notification.activityStop();
 }
 function backCamera()
 {
+	navigator.notification.activityStart();
 	document.getElementById('photoview').style.display='none';
 	document.getElementById('menu').style.display='block';
 	document.getElementById('options').style.display='none';
+	navigator.notification.activityStop();
 }
 function openOptions()
 {
+	navigator.notification.activityStart();
 	if(document.getElementById('options').style.display == 'block')
 	{
 		document.getElementById('options').style.display='none';
 		document.getElementById('menu').style.display='block';
 		document.getElementById('photoview').style.display='none';
-		document.getElementById('login').style.display='none';	
 	}
 	else
 	{
 		document.getElementById('menu').style.display='none';
 		document.getElementById('photoview').style.display='none';
 		document.getElementById('options').style.display='block';
-		document.getElementById('login').style.display='none';	
 	}
+	navigator.notification.activityStop();
 }
 function capturePhoto()
 {
@@ -266,11 +271,10 @@ navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 
 function uploadPhoto(imageURI) 
 	{
-			cameraPic.src = imageURI;
+				navigator.notification.activityStart();
+				cameraPic.src = imageURI;
 			
-			var answer = confirm ("Upload the picture?")
-			if (answer)
-			{
+
 				var options = new FileUploadOptions();
 	            options.fileKey="files";
 	            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -287,12 +291,7 @@ function uploadPhoto(imageURI)
 	 
 	            var ft = new FileTransfer();
 	            ft.upload(imageURI, "http://ixpdev.smartsite.seneca.intern/Pub/TestUpload", win, fail, options);	
-			}
-			else
-			{
-				alert ("Picture upload cancelled by user");
-			}
-            
+	            navigator.notification.activityStop();
 	}
 function win(r) 
 		{
@@ -316,21 +315,23 @@ function fail(error) {
         
 function showLogin()
 {
+	navigator.notification.activityStart();
 	alert(getSrc(document.getElementById('loginFrame')))
 	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
 	{
 	document.getElementById('menu').style.display='none';
 	document.getElementById('photoview').style.display='none';
 	document.getElementById('options').style.display='none';
-	document.getElementById('login').style.display='block';
 	}
 	else
 	{
 		alert("Already logged in")
 	}
+	navigator.notification.activityStop();
 }
 function pageLoaded()
 {	
+	navigator.notification.activityStart();
 	if(getSrc(document.getElementById('loginFrame')) == "http://ixpdev.smartsite.seneca.intern/mgr/managerlogin")
 	{
 		
@@ -339,8 +340,8 @@ function pageLoaded()
 		document.getElementById('menu').style.display='none';
 		document.getElementById('photoview').style.display='none';
 		document.getElementById('options').style.display='block';
-		document.getElementById('login').style.display='none';
 	}
+	navigator.notification.activityStop();
 }
 function getSrc(obj) 
 {
