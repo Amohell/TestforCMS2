@@ -93,11 +93,11 @@
 var getLocation = function() {
     var suc = function(p) {
         var cords = p.coords.latitude + " " + p.coords.longitude ;
-        var image_url = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + p.coords.latitude+ ',' + p.coords.longitude +  
+        locationPhoto.src = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + p.coords.latitude+ ',' + p.coords.longitude +  
                     "&zoom=14&size=300x400&markers=color:blue|label:S|" + p.coords.latitude + ',' + p.coords.longitude;  
                     
-        localStorage['urlother'] = image_url;
-   		showPage("other");
+   //     localStorage['urlother'] = image_url;
+ //  		showPage("other");
         
     };
     var locFail = function() {
