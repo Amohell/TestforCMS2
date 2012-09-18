@@ -38,7 +38,7 @@
 	}
 	function editItem()
 	{
-		localStorage['urlother'] = "http://ixpdev/Mgr/News-Library.mvc/select";
+		localStorage['urlother'] = "http://ixpdev.smartsite.seneca.intern/Mgr/News-Library";
 		showPage("other");
 	}
 	function loadExtern()
