@@ -14,6 +14,7 @@
   		 <script type="text/javascript" charset="utf-8" >
 			function loadPage()
 			{
+				alert("do you even do this")
 				document.getElementById('btnCount').click();
 				mySpan = document.getElementById('counterSpan');
 				if(mySpan!=null)
@@ -27,7 +28,7 @@
 						
 					}
 					
-					
+				}
 				
 				
 				if(span_text != null)
@@ -42,14 +43,14 @@
 					
 						
 					
-					}
-					if(span_text == null || span_text== 0 || span_text == "" || span_text == 1 || span_text == undefined)
-					{
-						alert("repeat" + span_text);
-						self.setInterval(function(){loadPage()},1000);
-						
-					}
 				}
+				if(span_text == null || span_text== 0 || span_text == "" || span_text == 1 || span_text == undefined)
+				{
+					alert("repeat" + span_text);
+					self.setInterval(function(){loadPage()},1000);
+						
+				}
+				
 			}	
 		
 			
