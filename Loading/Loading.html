@@ -44,7 +44,7 @@
 					}
 					if(span_text == null || span_text== 0 || span_text == "" || span_text == 1 || span_text == undefined)
 					{
-						loadPage()
+						self.setInterval(function(){loadPage()},1000);
 						
 					}
 				}
