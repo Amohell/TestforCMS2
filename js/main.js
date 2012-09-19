@@ -8,15 +8,11 @@
     	navigator.notification.activityStart();
     	if(sort == "start")
     	{
-    		 window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
-            { showLocationBar: false }); 
+    		 localStorage['urlother'] = localStorage['startpage'];
             
         }
-        if(sort == "other")
-        {
-    		 window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
-            { showLocationBar: false });
-        }
+        window.plugins.childBrowser.showWebPage("file:///android_asset/www/Loading/Loading.html",
+        { showLocationBar: false }); 
         navigator.notification.activityStop();
 	}
        //
@@ -71,7 +67,6 @@
    	var subsurl = url.substr(0,4)
 	if (url!=null && url!="")
   	{
-  		alert(subsurl);
   		if(subsurl != "http")
   		{
   			url = "http://" + url;
